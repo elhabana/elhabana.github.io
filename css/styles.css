@@ -17,7 +17,7 @@ em { font-style: normal; color: var(--accent); }
 .site-header { min-height: 85px; padding: 16px max(32px, calc((100% - 1280px) / 2)); display: flex; align-items: center; justify-content: space-between; gap: 28px; position: sticky; top: 0; background: #050505f2; backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); z-index: 20; }
 .wordmark { display: inline-flex; align-items: center; font-size: 34px; letter-spacing: -2px; font-weight: 750; }
 .wordmark > span:first-child { color: var(--accent); }
-.wordmark-name { margin-left: 14px; font-size: 15px; letter-spacing: -.4px; font-weight: 500; }
+.wordmark-name { margin-left: 0; font-size: 15px; letter-spacing: -.4px; font-weight: 500; }
 nav { display: flex; gap: 32px; }
 nav a, .header-link { color: var(--muted); font-size: 11px; padding-block: 12px; text-transform: uppercase; letter-spacing: 1px; }
 nav a:hover, nav a[aria-current], .header-link:hover { color: var(--text); }
@@ -228,19 +228,10 @@ body:has(dialog[open]) { overflow: hidden; }
   .stack-section { padding-bottom: 0; }
 }
 
-/* Identidad personal, reel y trabajos visuales complementarios. */
+/* Identidad personal, reel integrado y proyectos visuales. */
 .brand-logo { width: 44px; height: 44px; object-fit: contain; flex-shrink: 0; }
 .wordmark .wordmark-name { color: var(--text); }
 .reel-section { padding-block: 0 80px; }
-.reel-banner { display: flex; align-items: center; gap: 42px; padding: 40px 50px; position: relative; background: radial-gradient(ellipse at 75% 50%, #70e0bd08, transparent 65%), #0b0b0c; border: 1px solid var(--line); border-radius: 10px; transition: border-color .2s; }
-.reel-banner:hover { border-color: var(--accent); }
-.reel-banner > img { width: 150px; height: 150px; object-fit: contain; }
-.reel-banner h3 { margin: 14px 0 22px; font-size: clamp(24px, 3vw, 38px); font-weight: 500; letter-spacing: -1px; }
-.reel-cta { display: inline-flex; align-items: center; gap: 14px; font-size: 13px; color: var(--accent); }
-.reel-cta > span { display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid #70e0bd55; border-radius: 50%; font-size: 11px; }
-.reel-arrow { margin-left: auto; font-size: 30px; color: var(--muted); }
-.visual-section { padding-bottom: 90px; }
-.visual-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
 .visual-card { border: 1px solid var(--line); border-radius: 8px; background: var(--surface); overflow: hidden; transition: border-color .2s; }
 .visual-card:hover { border-color: #70617b; }
 .visual-card > a { display: block; height: 100%; }
@@ -256,8 +247,7 @@ body:has(dialog[open]) { overflow: hidden; }
 .profile-photo figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; padding-top: 16px; color: var(--muted); font: 9px/1.6 Consolas, monospace; letter-spacing: .5px; }
 .profile-photo figcaption span { color: var(--accent); }
 @media (max-width: 1050px) {
-  .visual-grid { gap: 16px; }
-  .visual-card-body { padding: 20px; }
+    .visual-card-body { padding: 20px; }
   .visual-card h3 { font-size: 18px; }
 }
 @media (max-width: 700px) {
@@ -265,11 +255,13 @@ body:has(dialog[open]) { overflow: hidden; }
   nav a { font-size: 9px; }
   .brand-logo { width: 36px; height: 36px; }
   .reel-section { padding-bottom: 60px; }
-  .reel-banner { padding: 28px 22px; gap: 20px; flex-wrap: wrap; }
-  .reel-banner > img { width: 72px; height: 72px; }
-  .reel-banner > div { flex-basis: 100%; }
-  .reel-arrow { position: absolute; top: 44px; right: 24px; }
-  .visual-grid { grid-template-columns: 1fr; gap: 24px; }
-  .visual-section { padding-bottom: 60px; }
-  .profile-photo { max-width: 300px; }
+              .profile-photo { max-width: 300px; }
+}
+
+.header-actions { display: flex; align-items: center; gap: 22px; }
+.header-brand { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; }
+.reel-player { aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: #0b0b0c; }
+.reel-player iframe { display: block; width: 100%; height: 100%; border: 0; }
+@media (max-width: 700px) {
+  .header-actions { gap: 14px; }
 }

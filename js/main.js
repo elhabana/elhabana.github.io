@@ -1,6 +1,6 @@
 /* Mejora progresiva: contenido, enlaces y desplegables funcionan sin JavaScript. */
 const filters = document.querySelector('.filters');
-const cards = [...document.querySelectorAll('[data-category]')];
+const cards = [...document.querySelectorAll('#proyectos [data-category]')];
 const count = document.querySelector('#project-count');
 
 function filterProjects(category) {
@@ -15,6 +15,8 @@ function filterProjects(category) {
   count.textContent = `${visible} ${visible === 1 ? 'proyecto' : 'proyectos'}`;
 }
 
+filters.querySelector('[data-filter="all"] span').textContent = String(cards.length).padStart(2, '0');
+filterProjects('all');
 filters.hidden = false;
 filters.addEventListener('click', (event) => {
   const button = event.target.closest('button[data-filter]');
@@ -42,7 +44,7 @@ const dialog = document.querySelector('#video-dialog');
 const container = document.querySelector('#video-container');
 let videoTrigger;
 
-// El reproductor externo solo se carga cuando se solicita un vídeo.
+// Los gameplays se abren en un diálogo; la demo reel está integrada en la página.
 document.querySelectorAll('[data-video]').forEach((link) => {
   link.addEventListener('click', (event) => {
     if (typeof dialog.showModal !== 'function' || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;

@@ -13,9 +13,9 @@
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <header class="site-header">
-    <a class="wordmark" href="#inicio" aria-label="Habana, inicio"><img class="brand-logo" src="assets/identity/logo.png" alt="" width="44" height="44"><span class="wordmark-name">elhabana</span></a>
+    <a class="wordmark" href="#inicio" aria-label="Habana, inicio"><span class="wordmark-name">elhabana</span></a>
     <nav aria-label="Navegación principal"><a href="#sobre-mi">Sobre mí</a><a href="#herramientas">Stack</a><a href="#proyectos">Proyectos</a><a href="#reel">Reel</a></nav>
-    <a class="header-link" href="https://github.com/elhabana">GitHub <span aria-hidden="true">↗</span></a>
+    <div class="header-actions"><a class="header-link" href="https://github.com/elhabana">GitHub <span aria-hidden="true">↗</span></a><a class="header-brand" href="#inicio" aria-label="Habana, volver al inicio"><img class="brand-logo" src="assets/identity/logo.png" alt="" width="44" height="44"></a></div>
   </header>
   <main id="contenido">
     <section class="hero section-shell" id="inicio" aria-labelledby="hero-title">
@@ -66,10 +66,10 @@
       </div>
     </section>
     <section class="section-shell projects-section" id="proyectos" aria-labelledby="projects-title">
-      <div class="section-heading"><div><p class="eyebrow">02 / TRABAJO SELECCIONADO</p><h2 id="projects-title">Menos contarlo.<br><span class="muted">Más enseñarlo.</span></h2></div><p>Prototipos, proyectos en equipo y sistemas en desarrollo. Aquí puedes ver cómo funcionan y explorar su código.</p></div>
+      <div class="section-heading"><div><p class="eyebrow">02 / TODOS LOS PROYECTOS</p><h2 id="projects-title">Menos contarlo.<br><span class="muted">Más enseñarlo.</span></h2></div><p>Videojuegos, prototipos, entornos 3D y animación. Todos mis proyectos, con sus demos, procesos y código.</p></div>
       <div class="project-toolbar">
-        <div class="filters" role="group" aria-label="Filtrar proyectos" hidden><button type="button" data-filter="all" aria-pressed="true">Todos <span>04</span></button><button type="button" data-filter="multiplayer" aria-pressed="false">Multijugador</button><button type="button" data-filter="arcade" aria-pressed="false">Acción & arcade</button></div>
-        <p id="project-count" class="small-label" role="status" aria-live="polite">4 proyectos</p>
+        <div class="filters" role="group" aria-label="Filtrar proyectos" hidden><button type="button" data-filter="all" aria-pressed="true">Todos <span>07</span></button><button type="button" data-filter="multiplayer" aria-pressed="false">Multijugador</button><button type="button" data-filter="arcade" aria-pressed="false">Acción & arcade</button><button type="button" data-filter="visual" aria-pressed="false">Creación visual</button></div>
+        <p id="project-count" class="small-label" role="status" aria-live="polite">7 proyectos</p>
       </div>
       <div class="project-grid">
         <article class="project-card project-preview" id="un-credibles" data-category="multiplayer">
@@ -91,24 +91,18 @@
           <div class="project-media"><img src="assets/projects/finger-run.png" alt="Portada de Finger Run, endless runner 2D" width="1000" height="750" loading="lazy"><span class="media-label">ARCADE 2D</span><a class="play-link" href="https://vimeo.com/1165044149" data-video="https://player.vimeo.com/video/1165044149" data-title="Finger Run — gameplay" aria-label="Ver gameplay de Finger Run"><span aria-hidden="true">▶</span> Ver gameplay</a></div>
           <div class="card-content"><p class="small-label">03 / ENDLESS RUNNER</p><h3>Finger Run</h3><p>Esquivar, sobrevivir y superar la marca anterior. Un runner 2D de inspiración arcade con dificultad progresiva y sistema de puntuación.</p><ul class="tags"><li>Unity</li><li>C#</li><li>Gameplay 2D</li></ul><details><summary>Explorar el proyecto <span aria-hidden="true">+</span></summary><div class="detail-content"><p>El proyecto combina animaciones, sonido, obstáculos y progresión de dificultad. Trabajo académico con colaboración acreditada en The Rookies.</p><p>El repositorio público actual es FINGERRUN_REPO.</p></div></details><div class="card-links"><a href="https://github.com/elhabana/FINGERRUN_REPO">GitHub ↗</a><a href="https://www.therookies.co/projects/95465">The Rookies ↗</a></div></div>
         </article>
+        <article class="project-card visual-card" id="creacion-visual" data-category="visual"><a href="https://www.therookies.co/projects/98989"><img src="assets/projects/attic.png" alt="Portada del proyecto de entorno de ático en Unity" width="1000" height="750" loading="lazy"><div class="visual-card-body"><p class="small-label">ENTORNO / UNITY</p><h3>Un ático con historia <span aria-hidden="true">↗</span></h3><p>Un pequeño entorno centrado en la iluminación cálida, la composición y los materiales para crear una atmósfera acogedora y envejecida.</p><span class="visual-source">Ver en The Rookies ↗</span></div></a></article>
+        <article class="project-card visual-card" id="animacion-2d" data-category="visual"><a href="https://www.therookies.co/projects/94204"><img src="assets/projects/animation.png" alt="Portada del proyecto de animación en un plano 2D" width="1000" height="750" loading="lazy"><div class="visual-card-body"><p class="small-label">ANIMACIÓN / UNITY · PHOTOSHOP</p><h3>Animación en plano 2D <span aria-hidden="true">↗</span></h3><p>Personajes y escenario creados con assets de Photoshop. Rigging e IK dentro de Unity con sus herramientas de animación 2D.</p><span class="visual-source">Ver en The Rookies ↗</span></div></a></article>
+        <article class="project-card visual-card" id="paintover" data-category="visual"><a href="https://www.therookies.co/projects/92294"><img src="assets/projects/paintover.png" alt="Portada del entorno 3D y paintover" width="1000" height="750" loading="lazy"><div class="visual-card-body"><p class="small-label">ENTORNO / BLENDER · PHOTOSHOP</p><h3>Del 3D al paintover <span aria-hidden="true">↗</span></h3><p>Modelado, iluminación y composición en Blender, con un trabajo posterior de pintura en Photoshop para refinar las formas y la atmósfera.</p><span class="visual-source">Ver en The Rookies ↗</span></div></a></article>
       </div>
       <a class="all-repos text-link" href="https://github.com/elhabana?tab=repositories">Más prototipos y experimentos en GitHub ↗</a>
     </section>
     <section class="section-shell reel-section" id="reel" aria-labelledby="reel-title">
       <div class="section-heading"><div><p class="eyebrow">EN VÍDEO</p><h2 id="reel-title">Demo reel</h2></div><p>Una selección de mi trabajo, en movimiento.</p></div>
-      <a class="reel-banner" href="https://www.youtube.com/watch?v=BUiMXoATEhk" data-video="https://www.youtube-nocookie.com/embed/BUiMXoATEhk" data-title="Habana — Demo reel" aria-label="Reproducir demo reel de Habana">
-        <img src="assets/identity/logo.png" alt="" width="300" height="300" loading="lazy">
-        <div><span class="small-label">HABANA / DEMO REEL</span><h3>Ideas que cobran vida.</h3><span class="reel-cta"><span aria-hidden="true">▶</span> Reproducir reel</span></div>
-        <span class="reel-arrow" aria-hidden="true">↗</span>
-      </a>
-    </section>
-    <section class="section-shell visual-section" id="creacion-visual" aria-labelledby="visual-title">
-      <div class="section-heading"><div><p class="eyebrow">OTRA PARTE DE MI TRABAJO</p><h2 id="visual-title">3D, animación<br><span class="muted">y creación visual.</span></h2></div><p>Iluminación, composición y movimiento. Trabajos que complementan mi perfil como desarrollador.</p></div>
-      <div class="visual-grid">
-        <article class="visual-card"><a href="https://www.therookies.co/projects/98989"><img src="assets/projects/attic.png" alt="Portada del proyecto de entorno de ático en Unity" width="1000" height="750" loading="lazy"><div class="visual-card-body"><p class="small-label">ENTORNO / UNITY</p><h3>Un ático con historia <span aria-hidden="true">↗</span></h3><p>Un pequeño entorno centrado en la iluminación cálida, la composición y los materiales para crear una atmósfera acogedora y envejecida.</p><span class="visual-source">Ver en The Rookies ↗</span></div></a></article>
-        <article class="visual-card"><a href="https://www.therookies.co/projects/94204"><img src="assets/projects/animation.png" alt="Portada del proyecto de animación en un plano 2D" width="1000" height="750" loading="lazy"><div class="visual-card-body"><p class="small-label">ANIMACIÓN / UNITY · PHOTOSHOP</p><h3>Animación en plano 2D <span aria-hidden="true">↗</span></h3><p>Personajes y escenario creados con assets de Photoshop. Rigging e IK dentro de Unity con sus herramientas de animación 2D.</p><span class="visual-source">Ver en The Rookies ↗</span></div></a></article>
-        <article class="visual-card"><a href="https://www.therookies.co/projects/92294"><img src="assets/projects/paintover.png" alt="Portada del entorno 3D y paintover" width="1000" height="750" loading="lazy"><div class="visual-card-body"><p class="small-label">ENTORNO / BLENDER · PHOTOSHOP</p><h3>Del 3D al paintover <span aria-hidden="true">↗</span></h3><p>Modelado, iluminación y composición en Blender, con un trabajo posterior de pintura en Photoshop para refinar las formas y la atmósfera.</p><span class="visual-source">Ver en The Rookies ↗</span></div></a></article>
+      <div class="reel-player">
+        <iframe src="https://www.youtube-nocookie.com/embed/BUiMXoATEhk" title="Habana — Demo reel" width="1280" height="720" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
+      <p class="video-fallback">Si el reproductor no carga, <a href="https://www.youtube.com/watch?v=BUiMXoATEhk">ver la demo reel en YouTube ↗</a>.</p>
     </section>
     <section class="section-shell about-section" id="sobre-mi" aria-labelledby="about-title">
       <div><p class="eyebrow">03 / DETRÁS DEL CÓDIGO</p><h2 id="about-title">Programar.<br>Probar.<br><span class="muted">Volver a jugar.</span></h2><figure class="profile-photo"><img src="assets/identity/habana.png" alt="Retrato de Habana, Cristian Rivero Llácer" width="1254" height="1254" loading="lazy"><figcaption>CRISTIAN RIVERO LLÁCER <span>Habana / elhabana</span></figcaption></figure></div>
@@ -116,7 +110,7 @@
     </section>
     <section class="section-shell contact-section" aria-labelledby="contact-title"><p class="eyebrow">CÓDIGO / PROCESO / RESULTADO</p><h2 id="contact-title">Nos vemos<br>en el próximo <em>proyecto.</em></h2><div class="hero-actions"><a class="button" href="https://github.com/elhabana">GitHub ↗</a><a class="text-link" href="https://www.therookies.co/u/elhabana">The Rookies ↗</a></div></section>
   </main>
-  <footer class="site-footer section-shell"><a class="wordmark" href="#inicio" aria-label="Habana, volver al inicio"><img class="brand-logo" src="assets/identity/logo.png" alt="" width="44" height="44"><span class="wordmark-name">elhabana</span></a><span>Unity, C# y muchas ganas de crear.</span><a href="#inicio">Volver arriba ↑</a></footer>
+  <footer class="site-footer section-shell"><a class="wordmark" href="#inicio" aria-label="Habana, volver al inicio"><span class="wordmark-name">elhabana</span></a><span>Unity, C# y muchas ganas de crear.</span><a href="#inicio">Volver arriba ↑</a></footer>
   <dialog id="video-dialog" aria-labelledby="video-title"><div class="dialog-header"><h2 id="video-title">Gameplay</h2><button type="button" class="close-dialog" aria-label="Cerrar vídeo">Cerrar <span aria-hidden="true">×</span></button></div><div id="video-container"></div><p class="video-fallback">Si el reproductor no carga, <a id="video-original" href="https://www.therookies.co/u/elhabana">abre el vídeo en su plataforma ↗</a>.</p></dialog>
 </body>
 </html>
