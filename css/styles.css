@@ -389,4 +389,4 @@ nav a:focus-visible::after, .text-link:focus-visible::after, .card-links a:focus
   .hero-copy .about-lead { font-size: 18px; }
   .hero-aside .profile-photo img { width: 68px; height: 68px; }
 }
-.hero-copy > p.eyebrow { font-size: 10px; color: var(--accent); }
+.hero-copy > h1.eyebrow { font: 10px/1.6 Consolas, monospace; letter-spacing: 1.7px; color: var(--accent); margin-bottom: 28px; }
