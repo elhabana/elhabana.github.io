@@ -34,3 +34,13 @@ Revisión: 3 de octubre de 2026. Contenido resumido de publicaciones del propiet
   https://github.com/elhabana/RollerHunter_REPO/commit/b11ff94c2c6add5fd15231b06d8c95c017d12c71
 
 Se consultaron también los metadatos públicos de los nueve repositorios de la cuenta. La selección mantiene el foco en los cuatro proyectos con más contexto disponible. No se atribuyen autorías individuales de cambios colectivos ni porcentajes de dominio de herramientas.
+
+## Identidad y creación visual
+
+- Logo y retrato: archivos originales facilitados por el usuario, copiados a assets/identity/ sin modificar.
+- Demo reel facilitado por el usuario: https://www.youtube.com/watch?v=BUiMXoATEhk
+- Entorno de ático en Unity: https://www.therookies.co/projects/98989
+- Animación con herramientas 2D de Unity y assets de Photoshop: https://www.therookies.co/projects/94204
+- Entorno de Blender y paintover en Photoshop: https://www.therookies.co/projects/92294
+
+Las descripciones y portadas de estos tres trabajos se verificaron en sus metadatos públicos el 3 de octubre de 2026. Los títulos del portfolio son etiquetas editoriales breves; los enlaces llevan a las publicaciones originales. Se muestran después de los proyectos de programación, en una sección visual independiente.
