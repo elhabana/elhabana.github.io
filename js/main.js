@@ -87,3 +87,20 @@ if ('IntersectionObserver' in window) {
   }, { rootMargin: '-20% 0px -55% 0px', threshold: 0 });
   document.querySelectorAll('main > section[id]').forEach((section) => observer.observe(section));
 }
+
+// Aparición única al entrar en pantalla. El contenido nunca se oculta esperando a JS.
+if ('IntersectionObserver' in window) {
+  const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const surfaces = document.querySelectorAll('.section-heading, .stack-card, .project-card, .reel-player, .profile-photo, .education, .contact-section');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      if (!motionPreference.matches) entry.target.classList.add('scroll-enter');
+      revealObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.08 });
+  surfaces.forEach((surface) => {
+    surface.addEventListener('animationend', () => surface.classList.remove('scroll-enter'), { once: true });
+    revealObserver.observe(surface);
+  });
+}
