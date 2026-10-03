@@ -229,7 +229,8 @@ body:has(dialog[open]) { overflow: hidden; }
 }
 
 /* Identidad personal, reel integrado y proyectos visuales. */
-.brand-logo { width: 44px; height: 44px; object-fit: contain; flex-shrink: 0; }
+.brand-logo { width: 44px; height: 44px; object-fit: contain; flex-shrink: 0; border-radius: 10px; }
+.site-header .wordmark { gap: 14px; }
 .wordmark .wordmark-name { color: var(--text); }
 .reel-section { padding-block: 0 80px; }
 .visual-card { border: 1px solid var(--line); border-radius: 8px; background: var(--surface); overflow: hidden; transition: border-color .2s; }
@@ -258,10 +259,6 @@ body:has(dialog[open]) { overflow: hidden; }
               .profile-photo { max-width: 300px; }
 }
 
-.header-actions { display: flex; align-items: center; gap: 22px; }
-.header-brand { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; }
 .reel-player { aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: #0b0b0c; }
 .reel-player iframe { display: block; width: 100%; height: 100%; border: 0; }
-@media (max-width: 700px) {
-  .header-actions { gap: 14px; }
-}
+.reel-heading h2.eyebrow { margin: 0; font: 10px/1.6 Consolas, monospace; letter-spacing: 1.7px; }
