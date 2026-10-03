@@ -362,14 +362,31 @@ nav a:focus-visible::after, .text-link:focus-visible::after, .card-links a:focus
 }
 
 /* Formación compacta y separación entre las secciones reordenadas. */
-.stack-section + .about-section { margin-top: 60px; }
-.about-section + .reel-section { padding-block: 80px 0; }
+.stack-section + .reel-section { padding-block: 80px 0; }
 .education-disclosure { margin-block: 28px; border-top: 0; }
 .education-disclosure > summary { width: fit-content; min-width: 180px; min-height: 48px; padding: 12px 18px; border: 1px solid #ffffff30; border-radius: 10px; background: #ffffff05; font-size: 13px; transition: background .25s, border-color .25s; }
 .education-disclosure > summary:hover, .education-disclosure[open] > summary { background: #ffffff0b; border-color: #ced9e34d; }
 .education-list .education { margin-block: 16px; }
 .education-list .education:last-child { margin-bottom: 0; }
 @media (max-width: 700px) {
-  .stack-section + .about-section { margin-top: 48px; }
-  .about-section + .reel-section { padding-block: 60px 0; }
+  .stack-section + .reel-section { padding-block: 60px 0; }
 }
+
+/* Presentación y biografía integradas en una única cabecera. */
+.hero { align-items: start; }
+.hero-copy#sobre-mi { scroll-margin-top: 126px; }
+.hero-copy .hero-name { margin-bottom: 14px; }
+.hero-copy .about-lead { font-size: 20px; color: #c2ccd5; margin-bottom: 24px; }
+.hero-copy .skill-groups { margin-block: 24px; }
+.hero-copy .education-disclosure { margin-block: 22px; }
+.hero-copy .secondary-experience { margin-bottom: 0; }
+.hero-copy .hero-footnote { margin-top: 24px; }
+.hero-aside { min-width: 0; display: grid; gap: 22px; }
+.hero-aside .profile-photo { display: flex; align-items: center; gap: 20px; max-width: none; margin: 0; padding: 18px; background: #ffffff03; border: 1px solid var(--line); border-radius: 14px; }
+.hero-aside .profile-photo img { width: 80px; height: 80px; flex-shrink: 0; }
+.hero-aside .profile-photo figcaption { display: grid; gap: 8px; padding: 0; line-height: 1.7; }
+@media (max-width: 700px) {
+  .hero-copy .about-lead { font-size: 18px; }
+  .hero-aside .profile-photo img { width: 68px; height: 68px; }
+}
+.hero-copy > p.eyebrow { font-size: 10px; color: var(--accent); }
