@@ -360,3 +360,16 @@ nav a:focus-visible::after, .text-link:focus-visible::after, .card-links a:focus
 @media (max-width: 700px) {
   .hero-name { font-size: clamp(60px, 16vw, 88px); margin-bottom: 24px; }
 }
+
+/* Formación compacta y separación entre las secciones reordenadas. */
+.stack-section + .about-section { margin-top: 60px; }
+.about-section + .reel-section { padding-block: 80px 0; }
+.education-disclosure { margin-block: 28px; border-top: 0; }
+.education-disclosure > summary { width: fit-content; min-width: 180px; min-height: 48px; padding: 12px 18px; border: 1px solid #ffffff30; border-radius: 10px; background: #ffffff05; font-size: 13px; transition: background .25s, border-color .25s; }
+.education-disclosure > summary:hover, .education-disclosure[open] > summary { background: #ffffff0b; border-color: #ced9e34d; }
+.education-list .education { margin-block: 16px; }
+.education-list .education:last-child { margin-bottom: 0; }
+@media (max-width: 700px) {
+  .stack-section + .about-section { margin-top: 48px; }
+  .about-section + .reel-section { padding-block: 60px 0; }
+}
