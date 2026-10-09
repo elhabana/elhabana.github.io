@@ -1,8 +1,10 @@
 /* Mejora progresiva: contenido, enlaces y desplegables funcionan sin JavaScript. */
 const chatMessages = [
-  'Ey 👋 Soy el gato de Habana. Te enseño su mundo en unos segundos.',
-  'Cristian crea juegos en Unity y C#: gameplay, multijugador e IA. Le gusta que cada mecánica tenga personalidad.',
-  'También le va el 3D y lo audiovisual. Elige una pantalla abajo o usa las flechas para seguir explorando.'
+  'Ey 👋 Soy el gato de Habana. Te cuento quién está detrás del avatar.',
+  'Cristian crea videojuegos con Unity y C#. Para el multijugador usa Photon PUN y Netcode for GameObjects.',
+  'En la parte visual trabaja con Blender, Photoshop, Substance Painter, DaVinci Resolve y CapCut.',
+  'Estudió Informática de Oficina y Sistemas Microinformáticos y Redes. Ahora cursa Animación 3D, Juegos y Entornos Interactivos en Florida.',
+  'Tiene 23 años y es de Valencia, España. Si quieres ver lo que hace, abre Proyectos en el menú de abajo.'
 ];
 const chatList = document.querySelector('#avatar-chat');
 const avatarFrames = [...document.querySelectorAll('.avatar-frame')];
@@ -34,10 +36,10 @@ function playChat() {
       chatList.append(bubble);
       chatList.scrollTo({ top: chatList.scrollHeight, behavior: 'smooth' });
       speakAvatar();
-    }, index === 0 ? 250 : index * 3400);
+    }, index === 0 ? 250 : index * 4400);
     chatTimers.push(timer);
   });
-  chatTimers.push(window.setTimeout(playChat, 15500));
+  chatTimers.push(window.setTimeout(playChat, (chatMessages.length - 1) * 4400 + 7000));
 }
 
 document.querySelector('#chat-replay').addEventListener('click', playChat);

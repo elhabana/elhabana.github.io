@@ -7,6 +7,7 @@ Revisión: 3 de octubre de 2026. Contenido resumido de publicaciones del propiet
 - https://github.com/elhabana — Unity, C#, gameplay, sistemas, multijugador, IA, 3D, audiovisual y FiveM.
 - https://www.therookies.co/u/elhabana — formación en Florida y herramientas visuales.
 - Brief del usuario — nombre público, nombre completo y denominación del CFGS.
+- Datos facilitados por el usuario el 9 de octubre de 2026: tiene 23 años y es de Valencia, España.
 
 ## Proyectos y medios
 
