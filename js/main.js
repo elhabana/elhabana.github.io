@@ -1,9 +1,11 @@
 /* Mejora progresiva: contenido, enlaces y desplegables funcionan sin JavaScript. */
 const chatMessages = [
   'Ey 👋 Soy el gato de Habana. Te cuento quién está detrás del avatar.',
-  'Cristian crea videojuegos con Unity y C#. Para el multijugador usa Photon PUN y Netcode for GameObjects.',
+  'Cristian crea videojuegos con Unity y C#. Para el multijugador trabaja con Netcode for GameObjects.',
   'En la parte visual trabaja con Blender, Photoshop, Substance Painter, DaVinci Resolve y CapCut.',
-  'Estudió Informática de Oficina y Sistemas Microinformáticos y Redes. Ahora cursa Animación 3D, Juegos y Entornos Interactivos en Florida.',
+  'Estudió Informática de Oficina y Sistemas Microinformáticos y Redes. Ahora cursa Animación 3D, Juegos y Entornos Interactivos en Florida Universitaria.',
+  'Por su cuenta trastea con HTML, CSS, Lua, JavaScript y Python. Aún sigue aprendiendo.',
+  'Tiene Unreal Engine en el radar y está esperando los servidores de GTA 6 Roleplay.',
   'Tiene 23 años y es de Valencia, España. Si quieres ver lo que hace, abre Proyectos en el menú de abajo.'
 ];
 const chatList = document.querySelector('#avatar-chat');
@@ -168,23 +170,27 @@ window.addEventListener('hashchange', routeHash);
 window.addEventListener('resize', () => showScreen(activeScreen, false));
 routeHash();
 
-const educationDialog = document.querySelector('#education-dialog');
-const educationOpen = document.querySelector('#education-open');
-function closeEducation() {
-  if (typeof educationDialog.close === 'function') educationDialog.close();
-  else { educationDialog.removeAttribute('open'); educationOpen.focus({ preventScroll: true }); }
-}
-educationOpen.addEventListener('click', () => {
-  if (typeof educationDialog.showModal === 'function') educationDialog.showModal();
-  else educationDialog.setAttribute('open', '');
+const contactChoices = [...document.querySelectorAll('[data-contact-choice]')];
+const contactReply = document.querySelector('#contact-reply');
+const contactResponse = document.querySelector('.contact-response');
+const contactPrimary = document.querySelector('#contact-primary');
+const contactPrimaryLabel = document.querySelector('#contact-primary-label');
+const contactConsole = document.querySelector('.contact-console');
+contactChoices.forEach((choice) => {
+  choice.addEventListener('click', () => {
+    if (choice.getAttribute('aria-pressed') === 'true') return;
+    contactChoices.forEach((item) => item.setAttribute('aria-pressed', String(item === choice)));
+    contactReply.textContent = choice.dataset.reply;
+    contactPrimary.href = choice.dataset.contactUrl;
+    contactPrimaryLabel.textContent = choice.dataset.contactLabel;
+    contactConsole.classList.toggle('is-discord', choice.dataset.contactUrl.startsWith('https://discord.gg/'));
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    contactResponse.classList.remove('is-refreshing');
+    void contactResponse.offsetWidth;
+    contactResponse.classList.add('is-refreshing');
+  });
 });
-document.querySelector('#education-close').addEventListener('click', closeEducation);
-educationDialog.addEventListener('click', (event) => {
-  if (event.target !== educationDialog) return;
-  const rect = educationDialog.getBoundingClientRect();
-  if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) closeEducation();
-});
-educationDialog.addEventListener('close', () => educationOpen.focus({ preventScroll: true }));
+contactResponse.addEventListener('animationend', () => contactResponse.classList.remove('is-refreshing'));
 
 const dialog = document.querySelector('#video-dialog');
 const container = document.querySelector('#video-container');
