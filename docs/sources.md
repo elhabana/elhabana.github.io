@@ -38,6 +38,7 @@ Se consultaron también los metadatos públicos de los nueve repositorios de la 
 ## Identidad y creación visual
 
 - Logo y retrato: archivos originales facilitados por el usuario, copiados a assets/identity/ sin modificar.
+- Avatar de gato (cuatro expresiones): archivos originales facilitados por el usuario el 9 de octubre de 2026, copiados a assets/identity/ como `avatar-neutral.png`, `avatar-blink.png`, `avatar-talk.png` y `avatar-talk-blink.png` sin modificar.
 - Demo reel facilitado por el usuario: https://www.youtube.com/watch?v=BUiMXoATEhk
 - Entorno de ático en Unity: https://www.therookies.co/projects/98989
 - Animación con herramientas 2D de Unity y assets de Photoshop: https://www.therookies.co/projects/94204

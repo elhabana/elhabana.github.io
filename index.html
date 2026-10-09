@@ -3,115 +3,96 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Habana: programación de videojuegos en Unity y C#. Explora Roller Hunter, FPS Online y Finger Run. Un-Credibles, en desarrollo.">
-  <meta name="theme-color" content="#050505">
-  <title>Habana — Código que se juega</title>
-  <link rel="icon" type="image/png" href="assets/identity/logo.png">
+  <meta name="description" content="Entra en el mundo de Habana: videojuegos, código y creación visual. Descubre mis proyectos de Unity y C# junto a mi avatar.">
+  <meta name="theme-color" content="#08090b">
+  <title>Habana — Videojuegos con carácter</title>
+  <link rel="icon" type="image/png" href="assets/identity/habana.png">
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/main.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
-  <header class="site-header">
-    <a class="wordmark" href="#inicio" aria-label="Habana, inicio"><img class="brand-logo" src="assets/identity/logo.png" alt="" width="44" height="44"><span class="wordmark-name">elhabana</span></a>
-    <nav aria-label="Navegación principal"><a href="#inicio">Sobre mí</a><a href="#herramientas">Stack</a><a href="#reel">Reel</a><a href="#proyectos">Proyectos</a></nav>
-    <a class="header-link" href="https://github.com/elhabana">GitHub <span aria-hidden="true">↗</span></a>
-  </header>
+  <a class="corner-brand" href="#inicio" aria-label="Cristian Rivero Llácer, Habana, inicio"><img src="assets/identity/habana.png" alt="" width="38" height="38"><span><strong>Cristian Rivero Llácer</strong><small>Habana / elhabana</small></span></a>
+  <div class="screen-count" aria-hidden="true"><span id="current-screen">01</span><span> / 04</span></div>
   <main id="contenido">
     <section class="hero section-shell" id="inicio" aria-labelledby="hero-title">
-      <div class="hero-copy about-content" id="sobre-mi">
-        <h1 class="eyebrow" id="hero-title"><span class="status-dot"></span> DESARROLLADOR DE VIDEOJUEGOS</h1>
-        <p>Mi trabajo se centra en Unity y C#: lógica de juego, sistemas reutilizables, multijugador e IA. El 3D y la creación audiovisual completan mi forma de construir y presentar experiencias interactivas.</p><div class="skill-groups"><div><h3>Desarrollo</h3><p>Unity · C# · Photon PUN<br>Netcode for GameObjects</p></div><div><h3>Creación visual</h3><p>Blender · Photoshop<br>Substance Painter<br>DaVinci Resolve · CapCut</p></div></div><details class="education-disclosure"><summary>Formación <span aria-hidden="true">+</span></summary><div class="education-list"><div class="education"><span class="small-label">FORMACIÓN ACTUAL</span><p>CFGS en Animación 3D, Juegos<br>y Entornos Interactivos</p><span>Florida</span></div><div class="education"><span class="small-label">GRADO MEDIO</span><p>CFGM de Sistemas Microinformáticos y Redes (SMR)</p><span>IES Eduardo Primo</span></div><div class="education"><span class="small-label">FORMACIÓN PROFESIONAL BÁSICA</span><p>FPB de Informática de Oficina</p><span>IES Eduardo Primo</span></div></div></details><p class="secondary-experience">También trabajo con assets y contenido visual para GTA Roleplay / FiveM, con ajustes puntuales de scripts.</p>
-        <div class="social-links" aria-label="Perfiles profesionales">
-          <a href="https://github.com/elhabana" aria-label="GitHub de Habana"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 5v-4a3.5 3.5 0 0 0-1-2.7c3.3-.4 6.8-1.6 6.8-7.3A5.7 5.7 0 0 0 19.3 4a5.3 5.3 0 0 0-.1-4S18 0 15 1.6a14 14 0 0 0-7 0C5 0 3.8 0 3.8 0A5.3 5.3 0 0 0 3.7 4a5.7 5.7 0 0 0-1.5 4c0 5.7 3.5 6.9 6.8 7.3A3.5 3.5 0 0 0 8 18v4" transform="translate(1 1) scale(.9)"/></svg><span>GitHub</span></a>
-          <a href="https://www.linkedin.com/in/cristianhabana/" aria-label="LinkedIn de Cristian Habana"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M11 17v-7M11 13a3 3 0 0 1 6 0v4"/><circle cx="7" cy="7" r=".6"/></svg><span>LinkedIn</span></a>
-          <a href="https://www.therookies.co/u/elhabana"><span class="rookies-mark" aria-hidden="true">R</span><span>The Rookies</span></a>
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> PORTFOLIO INTERACTIVO / CRISTIAN RIVERO LLÁCER</p>
+        <h1 id="hero-title">Hola, soy<br><span>Habana<span class="hero-period">.</span></span></h1>
+        <p class="hero-lead">Hago videojuegos con código, curiosidad y un poco de carácter.</p>
+        <div class="chat-panel" aria-label="Mensajes del avatar">
+          <div class="chat-heading"><span class="chat-avatar">X_X</span><div><strong>El gato de Habana</strong><small><span class="status-dot"></span> EN LÍNEA</small></div><button type="button" id="chat-replay" aria-label="Repetir la presentación">↺ <span>Repetir</span></button></div>
+          <ol class="chat-messages" id="avatar-chat" aria-live="polite" aria-relevant="additions"><li class="chat-bubble">Ey 👋 Soy el gato de Habana. Te enseño su mundo en unos segundos.</li></ol>
+          <div class="chat-compose"><span>¿A dónde vamos?</span><a href="#proyectos">Ver proyectos <span aria-hidden="true">↗</span></a></div>
         </div>
-        <div class="hero-actions"><a class="button" href="#proyectos">VER PROYECTOS ↓</a><a class="text-link" href="#reel">Demo reel ↗</a></div>
-        <div class="hero-footnote"><span class="status-dot"></span> Ahora desarrollando <a href="#un-credibles">Un-Credibles ↗</a></div>
+        <div class="hero-footnote"><span class="status-dot"></span> AHORA DESARROLLANDO <a href="#un-credibles">UN-CREDIBLES ↗</a></div>
       </div>
-      <div class="hero-aside">
-        <figure class="profile-photo"><img src="assets/identity/habana.png" alt="Retrato de Habana, Cristian Rivero Llácer" width="1254" height="1254" loading="lazy"><figcaption>CRISTIAN RIVERO LLÁCER <span>Habana / elhabana</span></figcaption></figure>
-      <div class="code-window" aria-label="Perfil de Habana presentado como código C#">
-        <div class="editor-titlebar"><span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>Developer.cs</span><span class="editor-language">C#</span></div>
-        <div class="editor-body">
-          <pre><code><span class="code-comment">// Del código a la experiencia.</span>
-<span class="code-keyword">var</span> developer = <span class="code-keyword">new</span>
-{
-    Name = <span class="code-string">"Habana"</span>,
-    Role = <span class="code-string">"Game Developer"</span>,
-    Stack = <span class="code-keyword">new</span>[]
-    {
-        <span class="code-string">"Unity"</span>, <span class="code-string">"C#"</span>
-    },
-    Focus = <span class="code-keyword">new</span>[]
-    {
-        <span class="code-string">"Gameplay"</span>,
-        <span class="code-string">"Multiplayer"</span>,
-        <span class="code-string">"Game AI"</span>
-    },
-    AlwaysLearning = <span class="code-value">true</span>
-};</code></pre>
+      <div class="avatar-stage" role="img" aria-label="Avatar de Habana: un gato urbano con gorra, sudadera y zapatillas">
+        <div class="avatar-orbit avatar-orbit-one" aria-hidden="true"></div><div class="avatar-orbit avatar-orbit-two" aria-hidden="true"></div>
+        <span class="stage-label stage-label-top">ELHABANA / PLAYER 01</span>
+        <div class="avatar-images"><img class="avatar-frame is-visible" src="assets/identity/avatar-neutral.png" alt="" width="1254" height="1254" fetchpriority="high"><img class="avatar-frame" src="assets/identity/avatar-blink.png" alt="" width="1254" height="1254"><img class="avatar-frame" src="assets/identity/avatar-talk.png" alt="" width="1254" height="1254"><img class="avatar-frame" src="assets/identity/avatar-talk-blink.png" alt="" width="1254" height="1254"></div>
+        <span class="stage-label stage-label-bottom">UNITY <span>·</span> C# <span>·</span> GAMEPLAY</span>
+      </div>
+      <div class="hero-index" aria-hidden="true"><span>EXPLORA POR PANTALLAS</span><span>→</span></div>
+    </section>
+    <section class="section-shell about-section-modern" id="sobre-mi" aria-labelledby="about-title">
+      <div class="about-heading">
+        <p class="eyebrow">02 / DETRÁS DEL AVATAR</p>
+        <h2 id="about-title">Código, juego<br>y <em>carácter.</em></h2>
+        <div class="about-reel" id="reel">
+          <div class="reel-player"><iframe src="https://www.youtube-nocookie.com/embed/BUiMXoATEhk" title="Habana — Demo reel" width="1280" height="720" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+          <p><span><span class="status-dot"></span> DEMO REEL / EN MOVIMIENTO</span><a href="https://www.youtube.com/watch?v=BUiMXoATEhk">Abrir en YouTube ↗</a></p>
         </div>
-        <div class="editor-status"><span><span class="status-dot"></span> CODE · PLAY · ITERATE</span><span>UTF-8</span></div>
       </div>
+      <div class="about-content">
+        <p class="about-lead">Soy desarrollador de videojuegos. Me gusta convertir una mecánica en una experiencia que apetece repetir.</p>
+        <p>Trabajo desde la lógica de juego y los sistemas hasta la presentación visual de cada experiencia.</p>
+        <div class="skill-groups" aria-label="Áreas y herramientas">
+          <div class="skill-card"><div class="skill-card-head"><span class="skill-icon" aria-hidden="true">&lt;/&gt;</span><h3>Desarrollo</h3></div><ul class="skill-tags"><li>Unity</li><li>C#</li><li>Photon PUN</li><li>Netcode for GameObjects</li><li>Gameplay</li><li>Multijugador</li><li>IA</li></ul></div>
+          <div class="skill-card"><div class="skill-card-head"><span class="skill-icon" aria-hidden="true">✳</span><h3>Creación visual</h3></div><ul class="skill-tags"><li>Blender</li><li>Photoshop</li><li>Substance Painter</li><li>DaVinci Resolve</li><li>CapCut</li></ul></div>
+        </div>
+        <div class="about-bottom"><button type="button" class="education-trigger" id="education-open" aria-haspopup="dialog" aria-controls="education-dialog">Formación <span aria-hidden="true">↗</span></button><p class="secondary-experience">También trabajo con assets y contenido visual para GTA Roleplay / FiveM, con ajustes puntuales de scripts.</p></div>
+        <div class="social-links" aria-label="Perfiles profesionales"><a href="https://github.com/elhabana">GitHub ↗</a><a href="https://www.linkedin.com/in/cristianhabana/">LinkedIn ↗</a><a href="https://www.therookies.co/u/elhabana">The Rookies ↗</a></div>
       </div>
-    </section>
-    <section class="section-shell stack-section" id="herramientas" aria-labelledby="stack-title">
-      <div class="section-divider"><span>01</span><h2 id="stack-title">Mi stack</h2></div>
-      <div class="stack-grid">
-        <div class="stack-card"><span class="stack-symbol" aria-hidden="true">U</span><h3>Unity</h3><p>Desarrollo de juegos</p></div>
-        <div class="stack-card"><span class="stack-symbol" aria-hidden="true">C#</span><h3>C#</h3><p>Gameplay y sistemas</p></div>
-        <div class="stack-card"><span class="stack-symbol" aria-hidden="true">PUN</span><h3>Photon</h3><p>Multijugador online</p></div>
-        <div class="stack-card"><span class="stack-symbol" aria-hidden="true">3D</span><h3>Blender</h3><p>Arte y animación</p></div>
-        <div class="stack-card"><span class="stack-symbol" aria-hidden="true">Ps</span><h3>Photoshop</h3><p>Creación visual</p></div>
-        <div class="stack-card"><span class="stack-symbol" aria-hidden="true">Sp</span><h3>Substance Painter</h3><p>Texturizado 3D</p></div>
-        <div class="stack-card"><span class="stack-symbol" aria-hidden="true">DR</span><h3>DaVinci Resolve</h3><p>Edición y color</p></div>
-        <div class="stack-card"><span class="stack-symbol" aria-hidden="true">▶</span><h3>CapCut</h3><p>Edición de vídeo</p></div>
-      </div>
-    </section>
-    <section class="section-shell reel-section" id="reel" aria-labelledby="reel-title">
-      <div class="section-heading reel-heading"><h2 class="eyebrow" id="reel-title">EN VÍDEO</h2><p>Una selección de mi trabajo, en movimiento.</p></div>
-      <div class="reel-player">
-        <iframe src="https://www.youtube-nocookie.com/embed/BUiMXoATEhk" title="Habana — Demo reel" width="1280" height="720" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-      <p class="video-fallback">Si el reproductor no carga, <a href="https://www.youtube.com/watch?v=BUiMXoATEhk">ver la demo reel en YouTube ↗</a>.</p>
     </section>
     <section class="section-shell projects-section" id="proyectos" aria-labelledby="projects-title">
-      <div class="section-heading"><div><p class="eyebrow">02 / TODOS LOS PROYECTOS</p><h2 id="projects-title">Menos contarlo.<br><span class="muted">Más enseñarlo.</span></h2></div><p>Videojuegos, prototipos, entornos 3D y animación. Todos mis proyectos, con sus demos, procesos y código.</p></div>
-      <div class="project-toolbar">
-        <div class="filters" role="group" aria-label="Filtrar proyectos" hidden><button type="button" data-filter="all" aria-pressed="true">Todos <span>07</span></button><button type="button" data-filter="multiplayer" aria-pressed="false">Multijugador</button><button type="button" data-filter="arcade" aria-pressed="false">Acción & arcade</button><button type="button" data-filter="visual" aria-pressed="false">Creación visual</button></div>
-        <p id="project-count" class="small-label" role="status" aria-live="polite">7 proyectos</p>
+      <h2 id="projects-title" class="visually-hidden">Proyectos</h2>
+      <div class="thumbnail-grid">
+        <article class="project-tile" id="roller-hunter" data-project="roller-hunter" tabindex="0" aria-label="Roller Hunter: ver descripción y enlaces">
+          <img src="assets/projects/roller-hunter.png" alt="" width="1000" height="750" loading="lazy">
+          <div class="tile-info"><span class="small-label">SHOOTER ROGUELIKE</span><h3>Roller Hunter</h3><p>Patinaje y combate en tercera persona, con hordas y progresión roguelike.</p><div class="tile-links"><a href="https://www.youtube.com/watch?v=5AoCKrsbO0U" data-video="https://www.youtube-nocookie.com/embed/5AoCKrsbO0U" data-title="Roller Hunter — gameplay">Gameplay ↗</a><a href="https://github.com/elhabana/RollerHunter_REPO">Código ↗</a><a href="https://www.therookies.co/projects/100977">Proyecto ↗</a></div></div>
+        </article>
+        <article class="project-tile" id="fps-online" data-project="fps-online" tabindex="0" aria-label="FPS Online: ver descripción y enlaces">
+          <img src="assets/projects/fps-online.png" alt="" width="1000" height="750" loading="lazy">
+          <div class="tile-info"><span class="small-label">MULTIJUGADOR</span><h3>FPS Online</h3><p>Prototipo de combate online con sincronización de jugadores y disparos hitscan.</p><div class="tile-links"><a href="https://www.youtube.com/watch?v=CwL49L6E-d4" data-video="https://www.youtube-nocookie.com/embed/CwL49L6E-d4" data-title="FPS Online — gameplay">Gameplay ↗</a><a href="https://github.com/elhabana/FPSONLINE_REPO">Código ↗</a><a href="https://www.therookies.co/projects/96706">Proyecto ↗</a></div></div>
+        </article>
+        <article class="project-tile" id="finger-run" data-project="finger-run" tabindex="0" aria-label="Finger Run: ver descripción y enlaces">
+          <img src="assets/projects/finger-run.png" alt="" width="1000" height="750" loading="lazy">
+          <div class="tile-info"><span class="small-label">ARCADE 2D</span><h3>Finger Run</h3><p>Un endless runner para esquivar, sobrevivir y superar tu última marca.</p><div class="tile-links"><a href="https://vimeo.com/1165044149" data-video="https://player.vimeo.com/video/1165044149" data-title="Finger Run — gameplay">Gameplay ↗</a><a href="https://github.com/elhabana/FINGERRUN_REPO">Código ↗</a><a href="https://www.therookies.co/projects/95465">Proyecto ↗</a></div></div>
+        </article>
+        <article class="project-tile tile-uncredibles" id="un-credibles" data-project="un-credibles" tabindex="0" aria-label="Un-Credibles: ver descripción">
+          <div class="tile-art" aria-hidden="true"><span>U/C</span><small>EN DESARROLLO</small></div>
+          <div class="tile-info"><span class="small-label">EN DESARROLLO</span><h3>Un-Credibles</h3><p>Un party multijugador de superhéroes para hasta cuatro jugadores, con minijuegos competitivos.</p></div>
+        </article>
+        <article class="project-tile" id="creacion-visual" data-project="creacion-visual" tabindex="0" aria-label="Un ático con historia: ver descripción y enlace">
+          <img src="assets/projects/attic.png" alt="" width="1000" height="750" loading="lazy">
+          <div class="tile-info"><span class="small-label">ENTORNO 3D</span><h3>Un ático con historia</h3><p>Iluminación cálida, composición y materiales para crear una atmósfera acogedora y envejecida.</p><div class="tile-links"><a href="https://www.therookies.co/projects/98989">Ver proyecto ↗</a></div></div>
+        </article>
+        <article class="project-tile" id="animacion-2d" data-project="animacion-2d" tabindex="0" aria-label="Animación en plano 2D: ver descripción y enlace">
+          <img src="assets/projects/animation.png" alt="" width="1000" height="750" loading="lazy">
+          <div class="tile-info"><span class="small-label">ANIMACIÓN 2D</span><h3>Animación en plano 2D</h3><p>Assets de Photoshop con rigging e IK dentro de Unity.</p><div class="tile-links"><a href="https://www.therookies.co/projects/94204">Ver proyecto ↗</a></div></div>
+        </article>
+        <article class="project-tile" id="paintover" data-project="paintover" tabindex="0" aria-label="Del 3D al paintover: ver descripción y enlace">
+          <img src="assets/projects/paintover.png" alt="" width="1000" height="750" loading="lazy">
+          <div class="tile-info"><span class="small-label">BLENDER · PHOTOSHOP</span><h3>Del 3D al paintover</h3><p>Modelado y composición en Blender, refinados después con pintura digital.</p><div class="tile-links"><a href="https://www.therookies.co/projects/92294">Ver proyecto ↗</a></div></div>
+        </article>
       </div>
-      <div class="project-grid">
-        <article class="project-card project-preview" id="un-credibles" data-category="multiplayer">
-          <div class="card-content">
-            <p class="project-state"><span class="status-dot"></span> EN DESARROLLO</p>
-            <h3>Un-Credibles</h3>
-            <p>Un party multijugador de superhéroes para hasta cuatro jugadores, con minijuegos competitivos.</p>
-          </div>
-        </article>
-        <article class="project-card" id="roller-hunter" data-category="arcade">
-          <div class="project-media"><img src="assets/projects/roller-hunter.png" alt="Ilustración de Roller Hunter" width="1000" height="750" loading="lazy"><span class="media-label">PROYECTO EN EQUIPO</span><a class="play-link" href="https://www.youtube.com/watch?v=5AoCKrsbO0U" data-video="https://www.youtube-nocookie.com/embed/5AoCKrsbO0U" data-title="Roller Hunter — gameplay" aria-label="Ver gameplay de Roller Hunter"><span aria-hidden="true">▶</span> Ver gameplay</a></div>
-          <div class="card-content"><p class="small-label">01 / SHOOTER ROGUELIKE</p><h3>Roller Hunter</h3><p>Patinaje y combate en tercera persona en un mundo posapocalíptico estilizado. Movimiento rápido, hordas de enemigos y progresión roguelike.</p><ul class="tags"><li>Unity</li><li>C#</li><li>Gameplay 3D</li></ul><div class="card-links"><a href="https://github.com/elhabana/RollerHunter_REPO">GitHub ↗</a><a href="https://www.therookies.co/projects/100977">The Rookies ↗</a></div></div>
-        </article>
-        <article class="project-card" id="fps-online" data-category="multiplayer">
-          <div class="project-media"><img src="assets/projects/fps-online.png" alt="Portada del prototipo FPS Online" width="1000" height="750" loading="lazy"><span class="media-label">PROTOTIPO ONLINE</span><a class="play-link" href="https://www.youtube.com/watch?v=CwL49L6E-d4" data-video="https://www.youtube-nocookie.com/embed/CwL49L6E-d4" data-title="FPS Online — gameplay" aria-label="Ver gameplay de FPS Online"><span aria-hidden="true">▶</span> Ver gameplay</a></div>
-          <div class="card-content"><p class="small-label">02 / MULTIJUGADOR EN TIEMPO REAL</p><h3>FPS Online</h3><p>Un prototipo centrado en la sincronización de jugadores y el combate hitscan. Desde entrar a una sala hasta reaparecer después de cada enfrentamiento.</p><ul class="tags"><li>Unity</li><li>C#</li><li>Photon PUN</li></ul><div class="card-links"><a href="https://github.com/elhabana/FPSONLINE_REPO">GitHub ↗</a><a href="https://www.therookies.co/projects/96706">The Rookies ↗</a></div></div>
-        </article>
-        <article class="project-card" id="finger-run" data-category="arcade">
-          <div class="project-media"><img src="assets/projects/finger-run.png" alt="Portada de Finger Run, endless runner 2D" width="1000" height="750" loading="lazy"><span class="media-label">ARCADE 2D</span><a class="play-link" href="https://vimeo.com/1165044149" data-video="https://player.vimeo.com/video/1165044149" data-title="Finger Run — gameplay" aria-label="Ver gameplay de Finger Run"><span aria-hidden="true">▶</span> Ver gameplay</a></div>
-          <div class="card-content"><p class="small-label">03 / ENDLESS RUNNER</p><h3>Finger Run</h3><p>Esquivar, sobrevivir y superar la marca anterior. Un runner 2D de inspiración arcade con dificultad progresiva y sistema de puntuación.</p><ul class="tags"><li>Unity</li><li>C#</li><li>Gameplay 2D</li></ul><div class="card-links"><a href="https://github.com/elhabana/FINGERRUN_REPO">GitHub ↗</a><a href="https://www.therookies.co/projects/95465">The Rookies ↗</a></div></div>
-        </article>
-        <article class="project-card visual-card" id="creacion-visual" data-category="visual"><a href="https://www.therookies.co/projects/98989"><img src="assets/projects/attic.png" alt="Portada del proyecto de entorno de ático en Unity" width="1000" height="750" loading="lazy"><div class="visual-card-body"><p class="small-label">ENTORNO / UNITY</p><h3>Un ático con historia <span aria-hidden="true">↗</span></h3><p>Un pequeño entorno centrado en la iluminación cálida, la composición y los materiales para crear una atmósfera acogedora y envejecida.</p><span class="visual-source">Ver en The Rookies ↗</span></div></a></article>
-        <article class="project-card visual-card" id="animacion-2d" data-category="visual"><a href="https://www.therookies.co/projects/94204"><img src="assets/projects/animation.png" alt="Portada del proyecto de animación en un plano 2D" width="1000" height="750" loading="lazy"><div class="visual-card-body"><p class="small-label">ANIMACIÓN / UNITY · PHOTOSHOP</p><h3>Animación en plano 2D <span aria-hidden="true">↗</span></h3><p>Personajes y escenario creados con assets de Photoshop. Rigging e IK dentro de Unity con sus herramientas de animación 2D.</p><span class="visual-source">Ver en The Rookies ↗</span></div></a></article>
-        <article class="project-card visual-card" id="paintover" data-category="visual"><a href="https://www.therookies.co/projects/92294"><img src="assets/projects/paintover.png" alt="Portada del entorno 3D y paintover" width="1000" height="750" loading="lazy"><div class="visual-card-body"><p class="small-label">ENTORNO / BLENDER · PHOTOSHOP</p><h3>Del 3D al paintover <span aria-hidden="true">↗</span></h3><p>Modelado, iluminación y composición en Blender, con un trabajo posterior de pintura en Photoshop para refinar las formas y la atmósfera.</p><span class="visual-source">Ver en The Rookies ↗</span></div></a></article>
-      </div>
-      <a class="all-repos text-link" href="https://github.com/elhabana?tab=repositories">Más prototipos y experimentos en GitHub ↗</a>
     </section>
-    <section class="section-shell contact-section" aria-labelledby="contact-title"><p class="eyebrow">CÓDIGO / PROCESO / RESULTADO</p><h2 id="contact-title">Nos vemos<br>en el próximo <em>proyecto.</em></h2><div class="hero-actions"><a class="button" href="https://github.com/elhabana">GitHub ↗</a><a class="text-link" href="https://www.linkedin.com/in/cristianhabana/">LinkedIn ↗</a><a class="text-link" href="https://www.therookies.co/u/elhabana">The Rookies ↗</a></div></section>
+    <section class="section-shell contact-section" id="contacto" aria-labelledby="contact-title"><p class="eyebrow">04 / CÓDIGO · PROCESO · RESULTADO</p><h2 id="contact-title">Nos vemos<br>en el próximo <em>proyecto.</em></h2><div class="hero-actions"><a class="button" href="https://github.com/elhabana">GitHub ↗</a><a class="text-link" href="https://www.linkedin.com/in/cristianhabana/">LinkedIn ↗</a><a class="text-link" href="https://www.therookies.co/u/elhabana">The Rookies ↗</a></div></section>
   </main>
-  <footer class="site-footer section-shell"><a class="wordmark" href="#inicio" aria-label="Habana, volver al inicio"><span class="wordmark-name">elhabana</span></a><span>Unity, C# y muchas ganas de crear.</span><a href="#inicio">Volver arriba ↑</a></footer>
+  <nav class="deck-nav" aria-label="Pantallas del portfolio"><a href="#inicio" aria-current="page"><span>01</span> Inicio</a><a href="#sobre-mi"><span>02</span> Sobre mí</a><a href="#proyectos"><span>03</span> Proyectos</a><a href="#contacto"><span>04</span> Contacto</a></nav>
+  <div class="deck-arrows"><button type="button" id="screen-prev" aria-label="Pantalla anterior">←</button><button type="button" id="screen-next" aria-label="Pantalla siguiente">→</button></div>
+  <dialog id="education-dialog" aria-labelledby="education-title"><div class="education-modal-head"><span>TRAYECTORIA / CRISTIAN RIVERO LLÁCER</span><button type="button" id="education-close" aria-label="Cerrar formación">Cerrar ×</button></div><h2 id="education-title">Formación<span>.</span></h2><div class="education-modal-list"><div><span>01 / ACTUALMENTE</span><h3>Animación 3D, Juegos y Entornos Interactivos</h3><p>CFGS · Florida</p></div><div><span>02 / GRADO MEDIO</span><h3>Sistemas Microinformáticos y Redes</h3><p>CFGM · IES Eduardo Primo</p></div><div><span>03 / FORMACIÓN PROFESIONAL BÁSICA</span><h3>Informática de Oficina</h3><p>FPB · IES Eduardo Primo</p></div></div></dialog>
   <dialog id="video-dialog" aria-labelledby="video-title"><div class="dialog-header"><h2 id="video-title">Gameplay</h2><button type="button" class="close-dialog" aria-label="Cerrar vídeo">Cerrar <span aria-hidden="true">×</span></button></div><div id="video-container"></div><p class="video-fallback">Si el reproductor no carga, <a id="video-original" href="https://www.therookies.co/u/elhabana">abre el vídeo en su plataforma ↗</a>.</p></dialog>
 </body>
 </html>
