@@ -289,6 +289,11 @@ contactResponse.addEventListener('animationend', () => contactResponse.classList
 const dialog = document.querySelector('#video-dialog');
 const container = document.querySelector('#video-container');
 let videoTrigger;
+// Con ratón/táctil no se devuelve el foco al cerrar: si no, la tarjeta se queda marcada por :focus-within.
+let videoOpenedByPointer = false;
+let lastInputWasPointer = false;
+document.addEventListener('pointerdown', () => { lastInputWasPointer = true; }, true);
+document.addEventListener('keydown', () => { lastInputWasPointer = false; }, true);
 
 // Los gameplays se abren en un diálogo; la demo reel está integrada en la página.
 document.querySelectorAll('[data-video]').forEach((link) => {
@@ -296,8 +301,18 @@ document.querySelectorAll('[data-video]').forEach((link) => {
     if (typeof dialog.showModal !== 'function' || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
     videoTrigger = link;
-    document.querySelector('#video-title').textContent = link.dataset.title;
-    document.querySelector('#video-original').href = link.href;
+    videoOpenedByPointer = lastInputWasPointer;
+    const tile = link.closest('.project-tile');
+    document.querySelector('#video-title').textContent = tile?.querySelector('h3')?.textContent || link.dataset.title;
+    const original = document.querySelector('#video-original');
+    original.href = link.href;
+    original.textContent = link.href.includes('vimeo.com') ? 'Vimeo ↗' : 'YouTube ↗';
+    const projectLinks = tile ? [...tile.querySelectorAll('.tile-links a:not([data-video])')] : [];
+    document.querySelector('#video-project-links').replaceChildren(...projectLinks.map((item) => {
+      const copy = item.cloneNode(true);
+      copy.removeAttribute('id');
+      return copy;
+    }));
     const iframe = document.createElement('iframe');
     iframe.src = link.dataset.video;
     iframe.title = link.dataset.title;
@@ -308,15 +323,34 @@ document.querySelectorAll('[data-video]').forEach((link) => {
     dialog.showModal();
   });
 });
-document.querySelector('.close-dialog').addEventListener('click', () => dialog.close());
+// Cierre con animación de salida (sin ella si el movimiento está reducido).
+function closeVideo() {
+  if (!dialog.open || dialog.classList.contains('is-closing')) return;
+  const motionAllowed = document.body.classList.contains('site-effects-on') || !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!motionAllowed) { dialog.close(); return; }
+  dialog.classList.add('is-closing');
+  window.setTimeout(() => {
+    dialog.classList.remove('is-closing');
+    dialog.close();
+  }, 200);
+}
+document.querySelector('.close-dialog').addEventListener('click', closeVideo);
+dialog.addEventListener('cancel', (event) => {
+  event.preventDefault();
+  closeVideo();
+});
 dialog.addEventListener('click', (event) => {
   if (event.target !== dialog) return;
   const rect = dialog.getBoundingClientRect();
-  if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
+  if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) closeVideo();
 });
 dialog.addEventListener('close', () => {
   container.replaceChildren();
-  videoTrigger?.focus({ preventScroll: true });
+  if (!videoOpenedByPointer) {
+    videoTrigger?.focus({ preventScroll: true });
+    return;
+  }
+  window.setTimeout(() => document.activeElement?.blur(), 0);
 });
 
 // Aparición única al entrar en pantalla. El contenido nunca se oculta esperando a JS.

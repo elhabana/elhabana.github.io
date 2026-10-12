@@ -1440,3 +1440,35 @@ body:not(.site-effects-on) .contact-cat img { animation: none !important; }
 @media (min-width: 701px) {
   .project-tile:has(a[data-video]) { cursor: pointer; }
 }
+/* Visor de gameplay en modo cine: sin caja, vídeo flotando sobre el fondo difuminado. */
+#video-dialog { width: min(1100px, calc(100% - 32px), calc((100svh - 150px) * 16 / 9)); max-height: calc(100svh - 32px); padding: 0; border: 0; border-radius: 0; background: transparent; overflow: visible; }
+#video-dialog::backdrop { background: #000000d9; backdrop-filter: blur(10px); }
+#video-dialog .dialog-header { margin: 0 0 14px; padding-inline: 4px; }
+#video-dialog .dialog-title { display: flex; align-items: baseline; gap: 10px; min-width: 0; margin: 0; color: #f4f5f8; font-size: 22px; font-weight: 650; letter-spacing: -.02em; }
+#video-dialog .dialog-eyebrow { display: inline-flex; align-items: center; gap: 8px; flex: none; color: #b4b5b8; font: 11px Consolas, monospace; letter-spacing: 1px; }
+#video-dialog #video-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#video-dialog .close-dialog { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 44px; height: 44px; min-height: 44px; padding: 0; border: 1px solid #ffffff2b; border-radius: 50%; background: #ffffff12; color: #eeeff2; font-size: 22px; line-height: 1; cursor: pointer; }
+#video-dialog .close-dialog:hover { background: #ffffff24; border-color: #ffffff55; }
+#video-dialog .close-dialog:focus-visible { outline: 2px solid #e6e7ea; outline-offset: 3px; }
+#video-dialog #video-container { overflow: hidden; border: 1px solid #ffffff1f; border-radius: 18px; background: #050506; box-shadow: 0 30px 90px #000c, 0 0 0 1px #0006; }
+#video-dialog .dialog-links { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px 22px; margin: 16px 0 0; font-size: 13px; }
+#video-dialog .dialog-links span { display: contents; }
+#video-dialog .dialog-links a { color: #c9cacd; text-decoration: none; }
+#video-dialog .dialog-links a:hover, #video-dialog .dialog-links a:focus-visible { color: #ffffff; text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 700px) {
+  #video-dialog .dialog-title { font-size: 16px; }
+  #video-dialog .dialog-eyebrow { font-size: 9px; }
+  #video-dialog #video-container { border-radius: 12px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  #video-dialog[open] { animation: video-in .25s cubic-bezier(.22,1,.36,1); }
+  #video-dialog[open]::backdrop { animation: video-backdrop-in .25s ease-out; }
+}
+.site-effects-on #video-dialog[open] { animation: video-in .25s cubic-bezier(.22,1,.36,1); }
+.site-effects-on #video-dialog[open]::backdrop { animation: video-backdrop-in .25s ease-out; }
+#video-dialog.is-closing { animation: video-out .2s ease-in forwards !important; }
+#video-dialog.is-closing::backdrop { animation: video-backdrop-out .2s ease-in forwards !important; }
+@keyframes video-in { from { opacity: 0; transform: scale(.96) translateY(10px); } }
+@keyframes video-out { to { opacity: 0; transform: scale(.97) translateY(6px); } }
+@keyframes video-backdrop-in { from { opacity: 0; } }
+@keyframes video-backdrop-out { to { opacity: 0; } }
