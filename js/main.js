@@ -205,6 +205,7 @@ contactChoices.forEach((choice) => {
     contactChoices.forEach((item) => item.setAttribute('aria-pressed', String(item === choice)));
     contactReply.textContent = choice.dataset.reply;
     contactPrimary.href = choice.dataset.contactUrl;
+    if (choice.dataset.contactUrl.startsWith('mailto:')) contactPrimary.removeAttribute('target'); else contactPrimary.target = '_blank';
     contactPrimaryLabel.textContent = choice.dataset.contactLabel;
     contactConsole.classList.toggle('is-discord', choice.dataset.contactUrl.startsWith('https://discord.gg/'));
     if (!document.body.classList.contains('site-effects-on')) return;

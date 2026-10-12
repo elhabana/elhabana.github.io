@@ -1391,7 +1391,7 @@ body:not(.site-effects-on) .contact-cat img { animation: none !important; }
   .top-controls { top: 10px; right: 18px; }
   .screen-atmosphere { background: radial-gradient(ellipse 300px 400px at 75% 25%, #d1d2d518, transparent 80%); }
 }
-/* Móvil: proyectos en lista compacta, «Saludar» con texto y demo reel al final de Sobre mí. */
+/* Móvil: proyectos en lista compacta y «Saludar» con texto. */
 @media (max-width: 700px) {
   .thumbnail-grid { gap: 12px; }
   .thumbnail-grid > .project-tile, .thumbnail-grid > .project-tile.is-open, .thumbnail-grid > .project-tile:focus-within { display: grid; grid-template-columns: 104px minmax(0, 1fr); grid-template-rows: auto auto 1fr auto; column-gap: 14px; padding: 12px; background: #17181b; }
@@ -1404,8 +1404,4 @@ body:not(.site-effects-on) .contact-cat img { animation: none !important; }
   .thumbnail-grid .tile-links a { min-height: 40px; padding: 7px 12px; font-size: 12px; }
   .avatar-greet { left: 6px; right: 6px; bottom: 6px; width: auto; height: 32px; min-height: 32px; gap: 5px; padding: 0 8px; font-size: 11px; }
   .avatar-greet .greet-label { display: inline; }
-  main > section.about-section-modern { display: flex; flex-direction: column; }
-  .about-heading { display: contents; }
-  .about-content { order: 1; }
-  .about-reel { order: 2; margin-top: 28px; }
 }
