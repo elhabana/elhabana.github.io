@@ -1405,3 +1405,19 @@ body:not(.site-effects-on) .contact-cat img { animation: none !important; }
   .avatar-greet { left: 6px; right: 6px; bottom: 6px; width: auto; height: 32px; min-height: 32px; gap: 5px; padding: 0 8px; font-size: 11px; }
   .avatar-greet .greet-label { display: inline; }
 }
+/* Móvil: la tarjeta «Detrás de Habana» despliega la formación dentro de ella. */
+@media (max-width: 700px) {
+  .about-identity.profile-education-ready { position: relative; flex-wrap: wrap; padding-right: 44px; }
+  .about-identity .education-toggle { position: absolute; top: 0; left: 0; right: 0; z-index: 2; display: block; width: 100%; height: 72px; margin: 0; padding: 0; border: 0; border-radius: inherit; background: transparent; color: #bbbcbf; cursor: pointer; }
+  .about-identity .education-toggle:focus-visible { outline: 2px solid #e3e4e7; outline-offset: 3px; }
+  .about-identity .education-toggle svg { position: absolute; right: 14px; top: 27px; width: 18px; height: 18px; transition: transform .2s ease; }
+  .about-identity .education-toggle[aria-expanded="true"] svg { transform: rotate(180deg); color: #e4e5e8; }
+  .about-identity .education-summary { flex-basis: 100%; display: block; margin: 6px 0 6px; padding-top: 12px; border-top: 1px solid #ffffff18; }
+  .about-identity .education-summary[hidden] { display: none; }
+  .about-identity .education-blocks { display: grid; grid-template-columns: 1fr; gap: 8px; }
+}
+/* Móvil: la tarjeta «Detrás de Habana» va justo bajo el demo reel, antes del texto. */
+@media (max-width: 700px) {
+  .about-content { display: flex; flex-direction: column; padding-top: 0; }
+  .about-content > .about-identity { order: -1; margin: 0 0 22px; }
+}

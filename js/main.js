@@ -418,7 +418,7 @@ if ('IntersectionObserver' in window) {
   }, { threshold: [0, .9] });
   titleObserver.observe(aboutTitle.closest('section'));
 }
-// Una única copia de Formación: en PC se despliega desde la identidad; en móvil sigue visible.
+// Una única copia de Formación: se despliega desde la identidad (en PC flotando, en móvil dentro de la tarjeta).
 const profileIdentity = document.querySelector('.about-identity');
 const profileEducation = document.querySelector('#profile-education');
 const profileEducationHome = document.querySelector('.about-secondary');
@@ -426,8 +426,7 @@ const profileEducationToggle = document.querySelector('#education-toggle');
 const profileDesktop = window.matchMedia('(min-width: 701px)');
 let profileEducationPinned = false;
 function showProfileEducation(open) {
-  if (!profileDesktop.matches) return;
-  if (open) {
+  if (open && profileDesktop.matches) {
     const available = document.querySelector('.deck-nav').getBoundingClientRect().top - profileIdentity.getBoundingClientRect().bottom - 12;
     profileIdentity.style.setProperty('--education-space', `${Math.max(100, available)}px`);
   }
@@ -440,16 +439,11 @@ function placeProfileEducation() {
   profileIdentity.classList.remove('is-education-open');
   profileIdentity.style.removeProperty('--education-space');
   profileEducationToggle.setAttribute('aria-expanded', 'false');
-  profileEducationToggle.hidden = !profileDesktop.matches;
-  profileIdentity.classList.toggle('profile-education-ready', profileDesktop.matches);
+  profileEducationToggle.hidden = false;
+  profileIdentity.classList.add('profile-education-ready');
   profileEducationHome.classList.toggle('profile-education-ready', profileDesktop.matches);
-  if (profileDesktop.matches) {
-    profileIdentity.append(profileEducation);
-    profileEducation.hidden = true;
-  } else {
-    profileEducationHome.append(profileEducation);
-    profileEducation.hidden = false;
-  }
+  profileIdentity.append(profileEducation);
+  profileEducation.hidden = true;
 }
 profileEducationToggle.addEventListener('click', () => {
   profileEducationPinned = !profileEducationPinned;
