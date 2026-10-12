@@ -7,13 +7,17 @@
   <meta name="theme-color" content="#08090b">
   <title>Habana — Videojuegos con carácter</title>
   <link rel="icon" type="image/png" href="assets/identity/habana.png">
-  <link rel="stylesheet" href="css/styles.css?v=20261012-1653">
-  <script src="js/main.js?v=20261012-1653" defer></script>
+  <link rel="stylesheet" href="css/styles.css?v=20261012-1855">
+  <script src="js/main.js?v=20261012-1855" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <a class="corner-brand" href="#inicio" aria-label="Cristian Rivero Llácer, Habana, inicio"><img src="assets/identity/habana.png" alt="" width="38" height="38"><span><strong>Cristian Rivero Llácer</strong><small>Habana / elhabana</small></span></a>
-  <div class="screen-count" aria-hidden="true"><span id="current-screen">01</span><span> / 04</span></div>
+  <div class="top-controls">
+    <div class="screen-count" aria-hidden="true"><span id="current-screen">01</span><span> / 04</span></div>
+    <button type="button" class="hero-effects-toggle" id="hero-effects-toggle" aria-pressed="false" hidden>Activar efectos</button>
+  </div>
+  <div class="site-atmosphere" aria-hidden="true"><span class="hero-mote"></span><span class="hero-mote"></span><span class="hero-mote"></span><span class="hero-mote"></span><span class="hero-mote"></span><span class="hero-mote"></span></div>
   <main id="contenido">
     <section class="hero section-shell" id="inicio" aria-labelledby="hero-title">
       <div class="hero-copy">
@@ -21,16 +25,17 @@
         <h1 id="hero-title">Hola, soy<br><span>Habana<span class="hero-period">.</span></span></h1>
         <p class="hero-lead">Hago videojuegos con código, curiosidad y un poco de carácter.</p>
         <div class="chat-panel" aria-label="Mensajes del avatar">
-          <div class="chat-heading"><span class="chat-avatar">X_X</span><div><strong>El gato de Habana</strong><small><span class="status-dot"></span> EN LÍNEA</small></div><button type="button" id="chat-replay" aria-label="Repetir la presentación">↺ <span>Repetir</span></button></div>
-          <ol class="chat-messages" id="avatar-chat" aria-live="polite" aria-relevant="additions"><li class="chat-bubble">Ey 👋 Soy el gato de Habana. Te enseño su mundo en unos segundos.</li></ol>
-          <div class="chat-compose"><span>¿A dónde vamos?</span><a href="#proyectos">Ver proyectos <span aria-hidden="true">↗</span></a></div>
+          <div class="chat-heading"><span class="chat-avatar">X_X</span><div><strong>El gato de Habana</strong><small><span class="status-dot"></span> EN LÍNEA</small></div></div>
+          <ol class="chat-messages" id="avatar-chat" aria-live="polite" aria-relevant="additions"></ol>
+          <div class="chat-compose"><span class="chat-prompt">¿A dónde vamos?</span><span class="avatar-greeting" id="avatar-greeting" role="status" aria-live="polite"></span><a href="#proyectos">Ver proyectos <span aria-hidden="true">↗</span></a></div>
         </div>
         <div class="hero-footnote"><span class="status-dot"></span> AHORA DESARROLLANDO <a href="#un-credibles">UN-CREDIBLES ↗</a></div>
       </div>
-      <div class="avatar-stage" role="img" aria-label="Avatar de Habana: un gato urbano con gorra, sudadera y zapatillas">
+      <div class="avatar-stage" role="group" aria-label="Avatar de Habana: un gato urbano con gorra, sudadera y zapatillas">
         <div class="avatar-orbit avatar-orbit-one" aria-hidden="true"></div><div class="avatar-orbit avatar-orbit-two" aria-hidden="true"></div>
         <span class="stage-label stage-label-top">ELHABANA / PLAYER 01</span>
-        <div class="avatar-images"><img class="avatar-frame is-visible" src="assets/identity/avatar-neutral.png" alt="" width="1254" height="1254" fetchpriority="high"><img class="avatar-frame" src="assets/identity/avatar-blink.png" alt="" width="1254" height="1254"><img class="avatar-frame" src="assets/identity/avatar-talk.png" alt="" width="1254" height="1254"><img class="avatar-frame" src="assets/identity/avatar-talk-blink.png" alt="" width="1254" height="1254"></div>
+        <button type="button" class="avatar-greet" id="avatar-greet" aria-label="Saludar al gato" hidden><span aria-hidden="true">✦</span><span class="greet-label">Saludar</span></button>
+        <div class="avatar-images"><img class="avatar-frame is-visible" src="assets/identity/avatar-neutral.png" alt="" width="1254" height="1254" fetchpriority="high"></div>
         <span class="stage-label stage-label-bottom">UNITY <span>·</span> C# <span>·</span> GAMEPLAY</span>
       </div>
       <div class="hero-index" aria-hidden="true"><span>EXPLORA POR PANTALLAS</span><span>→</span></div>
@@ -38,26 +43,28 @@
     <section class="section-shell about-section-modern" id="sobre-mi" aria-labelledby="about-title">
       <div class="about-heading">
         <p class="eyebrow">02 / DETRÁS DEL AVATAR</p>
-        <h2 id="about-title">Código, juego<br>y <em>carácter.</em></h2>
+        <h2 id="about-title">Código, juego<br> y <em>carácter.</em></h2>
         <div class="about-reel" id="reel">
           <div class="reel-player"><iframe src="https://www.youtube-nocookie.com/embed/BUiMXoATEhk" title="Habana — Demo reel" width="1280" height="720" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
           <p><span><span class="status-dot"></span> DEMO REEL / EN MOVIMIENTO</span><a href="https://www.youtube.com/watch?v=BUiMXoATEhk">Abrir en YouTube ↗</a></p>
         </div>
       </div>
       <div class="about-content">
+        <img class="about-cat-sitting" src="assets/identity/gato-sentado.png" alt="" aria-hidden="true" width="1080" height="1080" loading="lazy">
         <p class="about-lead">Soy desarrollador de videojuegos. Me gusta convertir una mecánica en una experiencia que apetece repetir.</p>
         <p>Trabajo desde la lógica de juego y los sistemas hasta la presentación visual de cada experiencia.</p>
         <div class="about-identity">
           <img src="assets/identity/habana.png" alt="Retrato de Cristian Rivero Llácer" width="58" height="58" loading="lazy">
           <div><span>DETRÁS DE HABANA</span><h3>Cristian Rivero Llácer <small>«Habana»</small></h3><p>Valencia, España</p></div>
+          <button type="button" class="education-toggle" id="education-toggle" aria-label="Formación: desplegar o contraer estudios" aria-expanded="false" aria-controls="profile-education" title="Ver formación" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
         </div>
         <div class="skill-groups" aria-label="Áreas y herramientas">
           <div class="skill-card"><div class="skill-card-head"><span class="skill-icon" aria-hidden="true">&lt;/&gt;</span><h3>Desarrollo</h3></div><ul class="tool-grid" aria-label="Herramientas de desarrollo">
             <li><span class="tool-logo tool-logo-unity" tabindex="0" role="img" aria-label="Unity" data-name="Unity"><img src="assets/tools/unity.svg" alt="" loading="lazy"></span></li>
             <li><span class="tool-logo" tabindex="0" role="img" aria-label="C#" data-name="C#"><img src="assets/tools/csharp.svg" alt="" loading="lazy"></span></li>
             <li><span class="tool-logo" tabindex="0" role="img" aria-label="Netcode for GameObjects" data-name="Netcode for GameObjects"><img src="assets/tools/netcode.svg" alt="" loading="lazy"></span></li>
-          </ul><p class="skill-focus">Gameplay · Multijugador · IA</p></div>
-          <div class="skill-card"><div class="skill-card-head"><span class="skill-icon" aria-hidden="true">✳</span><h3>Creación visual</h3></div><ul class="tool-grid" aria-label="Herramientas de creación visual">
+          </ul></div>
+          <div class="skill-card"><div class="skill-card-head"><span class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="15" rx="2"/><path d="M12 18v3M8 21h8M9 13l7-7 2 2-7 7M9 13c-2 0-3 1-3 3 2 0 4-1 4-2"/></svg></span><h3>Creación visual</h3></div><ul class="tool-grid" aria-label="Herramientas de creación visual">
             <li><span class="tool-logo" tabindex="0" role="img" aria-label="Blender" data-name="Blender"><img src="assets/tools/blender.svg" alt="" loading="lazy"></span></li>
             <li><span class="tool-logo" tabindex="0" role="img" aria-label="Photoshop" data-name="Photoshop"><img src="assets/tools/photoshop.svg" alt="" loading="lazy"></span></li>
             <li><span class="tool-logo" tabindex="0" role="img" aria-label="Substance 3D Painter" data-name="Substance 3D Painter"><img src="assets/tools/substance-painter.svg" alt="" loading="lazy"></span></li>
@@ -65,8 +72,9 @@
             <li><span class="tool-logo" tabindex="0" role="img" aria-label="CapCut" data-name="CapCut"><img src="assets/tools/capcut.png" alt="" loading="lazy"></span></li>
           </ul></div>
         </div>
-        <div class="learning-card" aria-label="Tecnologías en aprendizaje e intereses próximos">
-          <div><h3>EN MI RADAR</h3><p>IN PROGRESS</p></div>
+        <div class="about-secondary">
+        <div class="learning-card" aria-label="Tecnologías e ideas por explorar">
+          <div><h3>En mi radar</h3><p>Por explorar</p></div>
           <ul class="tool-grid" aria-label="HTML, CSS, Lua, JavaScript, Python y Unreal Engine">
             <li><span class="tool-logo" tabindex="0" role="img" aria-label="HTML" data-name="HTML"><img src="assets/tools/html5.svg" alt="" loading="lazy"></span></li>
             <li><span class="tool-logo" tabindex="0" role="img" aria-label="CSS" data-name="CSS"><img src="assets/tools/css3.svg" alt="" loading="lazy"></span></li>
@@ -75,21 +83,21 @@
             <li><span class="tool-logo" tabindex="0" role="img" aria-label="Python" data-name="Python"><img src="assets/tools/python.svg" alt="" loading="lazy"></span></li>
             <li><span class="tool-logo tool-logo-unreal" tabindex="0" role="img" aria-label="Unreal Engine" data-name="Unreal Engine"><img src="assets/tools/unrealengine.svg" alt="" loading="lazy"></span></li>
           </ul>
-          <p class="radar-waiting"><span class="status-dot" aria-hidden="true"></span> EN ESPERA / Servidores de GTA 6 Roleplay</p>
         </div>
-        <h3 class="education-heading">Formación <span>→</span></h3>
+        <div class="education-summary" id="profile-education">
         <div class="education-blocks" aria-label="Formación">
           <div class="education-card"><span>01 / ACTUALMENTE</span><h3>Animación 3D, Juegos y Entornos Interactivos</h3><p>CFGS · Florida Universitaria</p></div>
           <div class="education-card"><span>02 / GRADO MEDIO</span><h3>Sistemas Microinformáticos y Redes</h3><p>CFGM · IES Eduardo Primo</p></div>
           <div class="education-card"><span>03 / FP BÁSICA</span><h3>Informática de Oficina</h3><p>FPB · IES Eduardo Primo</p></div>
         </div>
+        </div></div>
         <p class="secondary-experience">También trabajo con assets y contenido visual para GTA Roleplay / FiveM, con ajustes puntuales de scripts.</p>
         <div class="social-links" aria-label="Perfiles profesionales"><a href="https://github.com/elhabana">GitHub ↗</a><a href="https://www.linkedin.com/in/cristianhabana/">LinkedIn ↗</a><a href="https://www.therookies.co/u/elhabana">The Rookies ↗</a></div>
       </div>
     </section>
     <section class="section-shell projects-section" id="proyectos" aria-labelledby="projects-title">
       <h2 id="projects-title" class="visually-hidden">Proyectos</h2>
-      <article class="development-card" id="un-credibles" aria-labelledby="development-title"><div class="development-mark" aria-hidden="true">U/C</div><div class="development-copy"><p><span class="status-dot"></span> EN DESARROLLO</p><h3 id="development-title">Un-Credibles</h3><span>Un party multijugador de superhéroes para hasta cuatro jugadores, con minijuegos competitivos.</span></div><span class="development-index" aria-hidden="true">PROYECTO EN CURSO</span></article>
+      <article class="development-card" id="un-credibles" aria-labelledby="development-title"><div class="development-mark" aria-hidden="true">U/C</div><div class="development-copy"><p><span class="status-dot"></span> EN DESARROLLO</p><h3 id="development-title">Un-Credibles</h3><span>Un party multijugador de superhéroes para hasta cuatro jugadores, con minijuegos competitivos.</span></div><span class="development-index" aria-hidden="true">PROYECTO EN CURSO</span><div class="projects-genie" aria-hidden="true"><img src="assets/identity/gato-genio.png" alt="" width="1080" height="1080" loading="lazy"></div></article>
       <div class="thumbnail-grid">
         <article class="project-tile" id="roller-hunter" data-project="roller-hunter" tabindex="0" aria-label="Roller Hunter: ver descripción y enlaces">
           <img src="assets/projects/roller-hunter.png" alt="" width="1000" height="750" loading="lazy">
@@ -123,7 +131,7 @@
         <h2 id="contact-title">Lo siguiente<br>lo hacemos <em>juntos.</em></h2>
         <p class="contact-lead">Elige cómo quieres empezar la conversación.</p>
       </div>
-      <div class="contact-cat" aria-hidden="true"><img src="assets/identity/avatar-neutral.png" alt="" width="1254" height="1254" loading="lazy"></div>
+      <div class="contact-cat contact-genie" aria-hidden="true"><img src="assets/identity/gato-genio.png" alt="" width="1080" height="1080" loading="lazy"></div>
       <div class="contact-console">
         <div class="contact-console-head"><span><i class="status-dot"></i> CANAL ABIERTO</span><span>CONTACTO / HABANA</span></div>
         <h3>¿Qué tienes en mente?</h3>
@@ -132,7 +140,7 @@
           <button type="button" class="contact-choice" data-contact-choice data-contact-url="https://www.linkedin.com/in/cristianhabana/" data-contact-label="Hablemos por LinkedIn" data-reply="Si buscas a alguien para código, prototipos o creación visual, me encantará conocer el proyecto." aria-pressed="false"><span>02</span><strong>Quiero colaborar</strong><span aria-hidden="true">↗</span></button>
           <button type="button" class="contact-choice" data-contact-choice data-contact-url="https://discord.gg/9k8ZbG4w9F" data-contact-label="Entrar en mi Discord" data-reply="Si te apetece saludar o charlar sobre juegos y creación, pásate por mi comunidad de Discord. ¡Nos vemos allí!" aria-pressed="false"><span>03</span><strong>Solo quiero saludar</strong><span aria-hidden="true">↗</span></button>
         </div>
-        <div class="contact-response" aria-live="polite"><span class="contact-response-avatar" aria-hidden="true">X_X</span><p id="contact-reply">Cuéntame qué estás creando y en qué punto estás. Me interesan el gameplay, los sistemas y los retos multijugador.</p></div>
+        <div class="contact-response" aria-live="polite"><span class="contact-response-avatar contact-expressions" aria-hidden="true"><img class="is-active" src="assets/identity/gato-idea.png" alt="" width="1080" height="1080" decoding="async"><img src="assets/identity/gato-colaborar.png" alt="" width="1080" height="1080" decoding="async"><img src="assets/identity/gato-saludar.png" alt="" width="1080" height="1080" decoding="async"></span><p id="contact-reply">Cuéntame qué estás creando y en qué punto estás. Me interesan el gameplay, los sistemas y los retos multijugador.</p></div>
         <div class="contact-console-foot"><a class="contact-primary" id="contact-primary" href="https://www.linkedin.com/in/cristianhabana/" target="_blank" rel="noopener noreferrer"><span id="contact-primary-label">Hablemos por LinkedIn</span><span aria-hidden="true">↗</span></a><div class="contact-other-links"><a href="https://github.com/elhabana" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.therookies.co/u/elhabana" target="_blank" rel="noopener noreferrer">The Rookies ↗</a></div></div>
       </div>
     </section>
