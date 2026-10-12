@@ -1421,3 +1421,18 @@ body:not(.site-effects-on) .contact-cat img { animation: none !important; }
   .about-content { display: flex; flex-direction: column; padding-top: 0; }
   .about-content > .about-identity { order: -1; margin: 0 0 22px; }
 }
+/* Boca del gato: la cara normal queda siempre debajo y la de boca abierta se superpone sin fundido (evita el parpadeo). */
+.hero .avatar-images .avatar-frame:first-child { opacity: 1; }
+.hero .avatar-images .avatar-frame + .avatar-frame { transition: none !important; filter: none; }
+/* Botón de silencio del sonido del chat, encima de «Saludar». */
+.avatar-sound { position: absolute; z-index: 4; right: 18px; bottom: 68px; display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: 1px solid #cccdd05c; border-radius: 50%; background: #1e1f22eb; color: #eeeff2; cursor: pointer; }
+.avatar-sound:hover { background: #393a3d; border-color: #dfe0e3; }
+.avatar-sound:focus-visible { outline: 2px solid #e6e7ea; outline-offset: 4px; }
+.avatar-sound[hidden] { display: none; }
+.avatar-sound svg { width: 20px; height: 20px; }
+.avatar-sound .sound-off, .avatar-sound[aria-pressed="true"] .sound-on { display: none; }
+.avatar-sound[aria-pressed="true"] .sound-off { display: block; }
+@media (max-width: 700px) {
+  .avatar-sound { top: 6px; right: 6px; bottom: auto; width: 32px; height: 32px; background: #1e1f22f5; }
+  .avatar-sound svg { width: 16px; height: 16px; }
+}

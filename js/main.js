@@ -16,13 +16,71 @@ function showAvatarFrame(index) {
   avatarFrames.forEach((frame, frameIndex) => frame.classList.toggle('is-visible', frameIndex === index));
 }
 
+// Boca del gato: mientras aparece cada mensaje alterna la cara normal y la de boca abierta.
+let catVoiceTimers = [];
+
+function stopCatVoice() {
+  catVoiceTimers.forEach(window.clearTimeout);
+  catVoiceTimers = [];
+  showAvatarFrame(0);
+}
+
+function speakCat(message) {
+  stopCatVoice();
+  const motionAllowed = document.body.classList.contains('site-effects-on') || !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!motionAllowed) return;
+  const syllables = Math.min(6, Math.max(2, Math.round(message.length / 22)));
+  const step = .4;
+  for (let i = 0; i < syllables; i += 1) {
+    catVoiceTimers.push(window.setTimeout(() => showAvatarFrame(1), i * step * 1000));
+    catVoiceTimers.push(window.setTimeout(() => showAvatarFrame(0), (i * step + .24) * 1000));
+  }
+}
+
+// Aviso de mensaje nuevo: un «pop» de burbuja sintetizado con Web Audio (sin archivos).
+const soundButton = document.querySelector('#avatar-sound');
+let chatAudio;
+let chatMuted = false;
+try { chatMuted = window.localStorage.getItem('chat-sound-muted') === '1'; } catch { /* sin almacenamiento: sonido activado */ }
+
+function playMessagePop() {
+  if (chatMuted || !(window.AudioContext || window.webkitAudioContext)) return;
+  chatAudio = chatAudio || new (window.AudioContext || window.webkitAudioContext)();
+  if (chatAudio.state === 'suspended') chatAudio.resume();
+  const time = chatAudio.currentTime + .01;
+  const osc = chatAudio.createOscillator();
+  const gain = chatAudio.createGain();
+  osc.type = 'sine';
+  osc.frequency.setValueAtTime(320, time);
+  osc.frequency.exponentialRampToValueAtTime(880, time + .06);
+  gain.gain.setValueAtTime(.0001, time);
+  gain.gain.exponentialRampToValueAtTime(.18, time + .008);
+  gain.gain.exponentialRampToValueAtTime(.0001, time + .11);
+  osc.connect(gain).connect(chatAudio.destination);
+  osc.start(time);
+  osc.stop(time + .13);
+}
+
+function updateSoundButton() {
+  soundButton.setAttribute('aria-pressed', String(chatMuted));
+  soundButton.title = chatMuted ? 'Activar sonido' : 'Silenciar sonido';
+}
+soundButton.hidden = false;
+updateSoundButton();
+soundButton.addEventListener('click', () => {
+  chatMuted = !chatMuted;
+  try { window.localStorage.setItem('chat-sound-muted', chatMuted ? '1' : '0'); } catch { /* sin almacenamiento */ }
+  updateSoundButton();
+});
+
 function stopChat() {
   chatTimers.forEach(window.clearTimeout);
   chatTimers = [];
   chatList.replaceChildren();
+  stopCatVoice();
 }
 
-function playChat() {
+function playChat(withVoice = false) {
   stopChat();
   chatMessages.forEach((message, index) => {
     const timer = window.setTimeout(() => {
@@ -30,6 +88,10 @@ function playChat() {
       bubble.className = 'chat-bubble';
       bubble.textContent = message;
       chatList.append(bubble);
+      if (withVoice) {
+        playMessagePop();
+        speakCat(message);
+      }
       chatTimers.push(window.setTimeout(() => {
         bubble.classList.add('is-fading');
         chatTimers.push(window.setTimeout(() => bubble.remove(), 1000));
@@ -315,7 +377,7 @@ heroPointer.addEventListener('change', resetHeroLight);
 document.addEventListener('visibilitychange', () => { if (document.hidden) resetHeroLight(); });
 greetButton.hidden = false;
 greetButton.addEventListener('click', () => {
-  playChat();
+  playChat(true);
   window.clearTimeout(greetingTimer);
   greeting.textContent = '¡Ey, hola! 👋';
   if (heroEffectsEnabled) {
