@@ -1391,3 +1391,21 @@ body:not(.site-effects-on) .contact-cat img { animation: none !important; }
   .top-controls { top: 10px; right: 18px; }
   .screen-atmosphere { background: radial-gradient(ellipse 300px 400px at 75% 25%, #d1d2d518, transparent 80%); }
 }
+/* Móvil: proyectos en lista compacta, «Saludar» con texto y demo reel al final de Sobre mí. */
+@media (max-width: 700px) {
+  .thumbnail-grid { gap: 12px; }
+  .thumbnail-grid > .project-tile, .thumbnail-grid > .project-tile.is-open, .thumbnail-grid > .project-tile:focus-within { display: grid; grid-template-columns: 104px minmax(0, 1fr); grid-template-rows: auto auto 1fr auto; column-gap: 14px; padding: 12px; background: #17181b; }
+  .thumbnail-grid .project-tile > img { grid-column: 1; grid-row: 1 / 4; align-self: start; width: 104px; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 9px; }
+  .thumbnail-grid .project-tile .tile-info, .thumbnail-grid .project-tile:hover .tile-info, .thumbnail-grid .project-tile.is-open .tile-info, .thumbnail-grid .project-tile:focus-within .tile-info { display: contents; }
+  .thumbnail-grid .tile-info .small-label { grid-column: 2; grid-row: 1; margin: 0 0 3px; font-size: 9px; }
+  .thumbnail-grid .tile-info h3 { grid-column: 2; grid-row: 2; margin: 0 0 4px; font-size: 19px; line-height: 1.15; }
+  .thumbnail-grid .tile-info p { grid-column: 2; grid-row: 3; margin: 0; font-size: 12.5px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .thumbnail-grid .tile-links { grid-column: 1 / -1; grid-row: 4; margin-top: 12px; gap: 6px; }
+  .thumbnail-grid .tile-links a { min-height: 40px; padding: 7px 12px; font-size: 12px; }
+  .avatar-greet { left: 6px; right: 6px; bottom: 6px; width: auto; height: 32px; min-height: 32px; gap: 5px; padding: 0 8px; font-size: 11px; }
+  .avatar-greet .greet-label { display: inline; }
+  main > section.about-section-modern { display: flex; flex-direction: column; }
+  .about-heading { display: contents; }
+  .about-content { order: 1; }
+  .about-reel { order: 2; margin-top: 28px; }
+}
