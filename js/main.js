@@ -36,7 +36,7 @@ function playChat() {
       bubble.className = 'chat-bubble';
       bubble.textContent = message;
       chatList.append(bubble);
-      chatList.scrollTo({ top: chatList.scrollHeight, behavior: 'smooth' });
+      chatList.scrollTo({ top: chatList.scrollHeight, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
       speakAvatar();
     }, index === 0 ? 250 : index * 4400);
     chatTimers.push(timer);
@@ -91,7 +91,9 @@ function showScreen(index, updateHash = true) {
   const previousScreen = activeScreen;
   activeScreen = Math.max(0, Math.min(index, screens.length - 1));
   const screen = screens[activeScreen];
-  deck.scrollTo({ left: screen.offsetLeft, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+  window.scrollTo({ left: 0, top: 0, behavior: 'instant' });
+  screen.scrollLeft = 0;
+  deck.scrollTo({ left: screen.offsetLeft, top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
   deckLinks.forEach((link, linkIndex) => {
     if (linkIndex === activeScreen) link.setAttribute('aria-current', 'page');
     else link.removeAttribute('aria-current');
@@ -168,6 +170,7 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 });
 window.addEventListener('hashchange', routeHash);
 window.addEventListener('resize', () => showScreen(activeScreen, false));
+window.addEventListener('pageshow', () => showScreen(activeScreen, false));
 routeHash();
 
 const contactChoices = [...document.querySelectorAll('[data-contact-choice]')];

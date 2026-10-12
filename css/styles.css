@@ -997,3 +997,102 @@ main > section.contact-section { display: grid; grid-template-columns: minmax(0,
   .contact-cat img, .contact-response.is-refreshing { animation: none; }
   .contact-choice, .contact-primary { transition: none; }
 }
+
+
+/* Ajuste adaptable de pantallas: PC compacto y móvil legible. */
+html { overflow: clip; }
+main { position: fixed; inset: 0; }
+@media (min-width: 701px) {
+  main > section.hero { padding-top: 68px; padding-bottom: 88px; gap: clamp(24px, 4vw, 60px); }
+  .hero-copy > .eyebrow { margin-bottom: 14px; font-size: 9px; }
+  .hero h1 { font-size: clamp(48px, min(7vw, 12dvh), 88px); margin-bottom: 14px; }
+  .hero-lead { font-size: clamp(17px, 1.7vw, 23px); margin-bottom: 16px; }
+  .avatar-stage { height: min(560px, calc(100dvh - 170px)); min-height: 0; border-radius: 26px; }
+  .chat-heading { min-height: 48px; padding: 8px 14px; }
+  .chat-avatar { width: 30px; height: 30px; border-radius: 9px; }
+  .chat-messages { height: clamp(80px, 19dvh, 150px); padding: 12px 14px; }
+  .chat-bubble { padding: 9px 12px; font-size: 12px; }
+  .chat-compose { padding: 10px 14px; }
+  .hero-footnote { margin-top: 12px; font-size: 10px; }
+}
+@media (max-width: 700px) {
+  main > section.section-shell { padding: 74px 20px calc(92px + env(safe-area-inset-bottom)); scroll-padding-top: 20px; }
+  .corner-brand { top: 14px; left: 20px; }
+  .screen-count { top: 24px; right: 20px; }
+  .deck-nav { left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); width: auto; transform: none; gap: 2px; padding: 5px; }
+  .deck-nav a { flex: 1; justify-content: center; min-width: 0; min-height: 44px; padding: 0 5px; font-size: 11px; }
+  .deck-nav a span { display: none; }
+  main > .hero { display: grid; grid-template-columns: minmax(0, 1fr) 112px; grid-template-rows: repeat(5, max-content); align-content: safe center; align-items: center; gap: 16px 12px; }
+  .hero-copy { display: contents; }
+  .hero-copy > .eyebrow { grid-column: 1 / -1; grid-row: 1; margin: 0; font-size: 8px; letter-spacing: 1px; line-height: 1.6; }
+  .hero h1 { grid-column: 1; grid-row: 2; margin: 0; font-size: clamp(39px, 11vw, 58px); line-height: .95; }
+  .avatar-stage { grid-column: 2; grid-row: 2; width: 112px; height: 144px; min-height: 0; margin: 0; border-radius: 18px; }
+  .avatar-stage .stage-label { display: none; }
+  .hero-lead { grid-column: 1 / -1; grid-row: 3; margin: 0; max-width: none; font-size: 18px; line-height: 1.4; }
+  .chat-panel { grid-column: 1 / -1; grid-row: 4; width: 100%; border-radius: 17px; }
+  .chat-heading { min-height: 50px; padding: 9px 12px; }
+  .chat-heading strong { font-size: 12px; }
+  .chat-avatar { width: 30px; height: 30px; }
+  .chat-messages { height: clamp(110px, 20dvh, 160px); padding: 12px; }
+  .chat-bubble { max-width: 100%; padding: 10px 12px; font-size: 13px; }
+  .chat-compose { padding: 8px 12px; font-size: 12px; }
+  .chat-compose a { display: inline-flex; align-items: center; min-height: 44px; }
+  .hero-copy .hero-footnote { grid-column: 1 / -1; grid-row: 5; margin: 0; font-size: 10px; }
+  .hero-footnote a { display: inline-flex; align-items: center; min-height: 44px; }
+  main > .about-section-modern { display: block; padding-top: 74px; }
+  .about-heading h2 { margin-bottom: 20px; font-size: clamp(36px, 10vw, 54px); }
+  .about-content { margin-top: 24px; }
+  .about-content .about-lead { font-size: 22px; }
+  .about-content > p:not(.about-lead) { font-size: 15px; line-height: 1.6; }
+  .about-content .skill-groups { grid-template-columns: 1fr; gap: 12px; }
+  .education-blocks { grid-template-columns: 1fr; }
+  .education-card { min-height: 0; }
+  .education-card h3 { font-size: 15px; }
+  .education-card > p, .secondary-experience { font-size: 13px; }
+  .about-reel > p { flex-wrap: wrap; }
+  main > .projects-section { padding-top: 74px; gap: 20px; }
+  .development-card { width: 100%; padding: 16px; }
+  .development-copy > span { font-size: 13px; }
+  .thumbnail-grid { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-rows: auto; width: 100%; height: auto; min-height: 0; flex-shrink: 0; gap: 18px; padding: 0; }
+  .thumbnail-grid > .project-tile, .thumbnail-grid > .project-tile.is-open, .thumbnail-grid > .project-tile:focus-within { grid-column: auto; aspect-ratio: auto; min-height: 0; }
+  .project-tile:hover, .project-tile:focus-visible, .project-tile:focus-within, .project-tile.is-open { transform: none; }
+  .project-tile > img { display: block; height: auto; aspect-ratio: 4 / 3; }
+  .project-tile::after { display: none; }
+  .project-tile:hover > img, .project-tile:focus-visible > img, .project-tile:focus-within > img, .project-tile.is-open > img { filter: none; transform: none; }
+  .project-tile .tile-info, .project-tile:hover .tile-info, .project-tile.is-open .tile-info, .project-tile:focus-within .tile-info { position: static; opacity: 1; pointer-events: auto; transform: none; padding: 18px; background: #111a15; }
+  .tile-info .small-label { font-size: 10px; }
+  .tile-info h3 { font-size: 26px; }
+  .tile-info p { font-size: 14px; line-height: 1.55; }
+  .tile-links { gap: 8px; }
+  .tile-links a { min-height: 44px; padding: 8px 14px; font-size: 12px; }
+  main > section.contact-section { display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 20px; padding-top: 74px; }
+  .contact-intro h2 { font-size: clamp(38px, 10.5vw, 56px); }
+  .contact-lead { margin-bottom: 0; font-size: 15px; }
+  .contact-cat { display: none; }
+  .contact-console { width: 100%; padding: 18px; }
+  .contact-choice { min-height: 56px; gap: 8px; }
+  .contact-choice strong { font-size: 14px; }
+  .contact-response p { font-size: 14px; }
+  .contact-console-foot { align-items: stretch; flex-direction: column; }
+  .contact-primary { min-height: 48px; font-size: 14px; }
+  .contact-other-links a { display: inline-flex; align-items: center; min-height: 44px; font-size: 13px; }
+}
+@media (min-width: 701px) and (max-height: 600px) {
+  main > section.hero { padding-top: 58px; padding-bottom: 78px; }
+  .hero-copy > .eyebrow { margin-bottom: 8px; }
+  .hero h1 { margin-bottom: 10px; }
+  .hero-lead { margin-bottom: 10px; font-size: 17px; }
+  .chat-messages { height: 70px; }
+  .hero-footnote { margin-top: 8px; }
+}
+
+/* Cabecera opaca: mantiene la identidad legible al desplazar cada pantalla. */
+.corner-brand::before { content: ""; position: fixed; inset: 0 0 auto; height: 76px; z-index: -1; pointer-events: none; background: #08090b; border-bottom: 1px solid #ffffff18; }
+@media (max-width: 700px) {
+  .corner-brand::before { height: 64px; }
+}
+/* La tarjeta en desarrollo conserva la altura de su contenido en móvil. */
+@media (max-width: 700px) {
+  .development-card { flex-shrink: 0; height: auto; }
+  .development-copy > span { display: block; overflow-wrap: break-word; }
+}
