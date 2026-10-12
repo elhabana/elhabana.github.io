@@ -112,17 +112,25 @@ const projectTiles = [...document.querySelectorAll('.project-tile')];
 function openTile(tile) {
   projectTiles.forEach((item) => item.classList.toggle('is-open', item === tile));
 }
+// En PC, pulsar la tarjeta abre su gameplay; si no tiene, no hace nada. En móvil despliega la info.
+const projectsDesktop = window.matchMedia('(min-width: 701px)');
+function activateTile(tile) {
+  if (projectsDesktop.matches) {
+    tile.querySelector('a[data-video]')?.click();
+    return;
+  }
+  openTile(tile);
+  history.replaceState(null, '', `#${tile.id}`);
+}
 projectTiles.forEach((tile) => {
   tile.addEventListener('click', (event) => {
     if (event.target.closest('a')) return;
-    openTile(tile);
-    history.replaceState(null, '', `#${tile.id}`);
+    activateTile(tile);
   });
   tile.addEventListener('keydown', (event) => {
     if (event.target !== tile || !['Enter', ' '].includes(event.key)) return;
     event.preventDefault();
-    openTile(tile);
-    history.replaceState(null, '', `#${tile.id}`);
+    activateTile(tile);
   });
 });
 document.addEventListener('pointerdown', (event) => {

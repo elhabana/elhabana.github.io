@@ -1436,3 +1436,7 @@ body:not(.site-effects-on) .contact-cat img { animation: none !important; }
   .avatar-sound { top: 6px; right: 6px; bottom: auto; width: 32px; height: 32px; background: #1e1f22f5; }
   .avatar-sound svg { width: 16px; height: 16px; }
 }
+/* PC: las tarjetas con gameplay se abren al pulsarlas. */
+@media (min-width: 701px) {
+  .project-tile:has(a[data-video]) { cursor: pointer; }
+}
